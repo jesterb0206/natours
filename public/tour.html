@@ -196,69 +196,69 @@
       <div id="map"></div>
       <script>
         mapboxgl.accessToken =
-          "pk.eyJ1Ijoiam9uYXNzY2htZWR0bWFubiIsImEiOiJjam54ZmM5N3gwNjAzM3dtZDNxYTVlMnd2In0.ytpI7V7w7cyT1Kq5rT9Z1A";
+          'pk.eyJ1Ijoiam9uYXNzY2htZWR0bWFubiIsImEiOiJjam54ZmM5N3gwNjAzM3dtZDNxYTVlMnd2In0.ytpI7V7w7cyT1Kq5rT9Z1A';
 
         const geojson = {
-          type: "FeatureCollection",
+          type: 'FeatureCollection',
           features: [
             {
-              type: "Feature",
+              type: 'Feature',
               geometry: {
-                type: "Point",
+                type: 'Point',
                 coordinates: [-112.987418, 37.198125],
               },
               properties: {
-                description: "Zion Canyon National Park",
+                description: 'Zion Canyon National Park',
               },
             },
             {
-              type: "Feature",
+              type: 'Feature',
               geometry: {
-                type: "Point",
+                type: 'Point',
                 coordinates: [-111.376161, 36.86438],
               },
               properties: {
-                description: "Antelope Canyon",
+                description: 'Antelope Canyon',
               },
             },
             {
-              type: "Feature",
+              type: 'Feature',
               geometry: {
-                type: "Point",
+                type: 'Point',
                 coordinates: [-112.115763, 36.058973],
               },
               properties: {
-                description: "Grand Canyon National Park",
+                description: 'Grand Canyon National Park',
               },
             },
             {
-              type: "Feature",
+              type: 'Feature',
               geometry: {
-                type: "Point",
+                type: 'Point',
                 coordinates: [-116.107963, 34.011646],
               },
               properties: {
-                description: "Joshua Tree National Park",
+                description: 'Joshua Tree National Park',
               },
             },
           ],
         };
 
         const map = new mapboxgl.Map({
-          container: "map",
-          style: "mapbox://styles/jonasschmedtmann/cjnxfn3zk7bj52rpegdltx58h",
+          container: 'map',
+          style: 'mapbox://styles/jonasschmedtmann/cjnxfn3zk7bj52rpegdltx58h',
           scrollZoom: false,
         });
 
         const bounds = new mapboxgl.LngLatBounds();
 
         geojson.features.forEach(function (marker) {
-          var el = document.createElement("div");
-          el.className = "marker";
+          var el = document.createElement('div');
+          el.className = 'marker';
 
           new mapboxgl.Marker({
             element: el,
-            anchor: "bottom",
+            anchor: 'bottom',
           })
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
@@ -268,7 +268,7 @@
             closeOnClick: false,
           })
             .setLngLat(marker.geometry.coordinates)
-            .setHTML("<p>" + marker.properties.description + "</p>")
+            .setHTML('<p>' + marker.properties.description + '</p>')
             .addTo(map);
 
           bounds.extend(marker.geometry.coordinates);
@@ -283,17 +283,17 @@
           },
         });
 
-        map.on("load", function () {
+        map.on('load', function () {
           map.addLayer({
-            id: "route",
-            type: "line",
+            id: 'route',
+            type: 'line',
             source: {
-              type: "geojson",
+              type: 'geojson',
               data: {
-                type: "Feature",
+                type: 'Feature',
                 properties: {},
                 geometry: {
-                  type: "LineString",
+                  type: 'LineString',
                   coordinates: [
                     [-112.987418, 37.198125],
                     [-111.376161, 36.86438],
@@ -304,13 +304,13 @@
               },
             },
             layout: {
-              "line-join": "round",
-              "line-cap": "round",
+              'line-join': 'round',
+              'line-cap': 'round',
             },
             paint: {
-              "line-color": "#55c57a",
-              "line-opacity": 0.6,
-              "line-width": 3,
+              'line-color': '#55c57a',
+              'line-opacity': 0.6,
+              'line-width': 3,
             },
           });
         });
