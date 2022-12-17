@@ -1,0 +1,32 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning Node.js, Express.js and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesterb0206/natours.git"
+  },
+  "keywords": [
+    "Atlas",
+    "Compass",
+    "Express",
+    "Git",
+    "Heroku",
+    "Mongoose",
+    "Sendgrid",
+    "Stripe"
+  ],
+  "author": "Bradley Jester",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesterb0206/natours/issues"
+  },
+  "homepage": "https://github.com/jesterb0206/natours#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
