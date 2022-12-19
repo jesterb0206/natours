@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+const { error } = require('console');
 const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
@@ -50,7 +52,7 @@ exports.createTour = async (req, res) => {
   } catch (err) {
     res.status(400).json({
       status: 'fail',
-      message: 'Invalid data sent!',
+      message: err,
     });
   }
 };
