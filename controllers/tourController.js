@@ -2,13 +2,27 @@ const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
   try {
+    // eslint-disable-next-line no-console
+    console.log(req.query);
+
     // BUILD QUERY
+
+    // 1) FILTERING
 
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    // eslint-disable-next-line prettier/prettier
     excludedFields.forEach((el) => delete queryObj[el]);
 
-    const query = Tour.find(queryObj);
+    // 2) ADVANCED FILTERING
+
+    let queryStr = JSON.stringify(queryObj);
+    // eslint-disable-next-line prettier/prettier
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+    // eslint-disable-next-line no-console
+    console.log(JSON.parse(queryStr));
+
+    const query = Tour.find(JSON.parse(queryStr));
 
     // EXECUTE QUERY
 
