@@ -1,8 +1,16 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const app = require('./app');
+
+process.on('uncaughtException', (err) => {
+  // eslint-disable-next-line no-console
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  // eslint-disable-next-line no-console
+  console.log(err.name, err.message);
+  process.exit(1);
+});
 
 dotenv.config({ path: './config.env' });
+const app = require('./app');
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
