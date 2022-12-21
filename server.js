@@ -21,7 +21,17 @@ mongoose
   });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`App listening on port ${port}...`);
+});
+
+process.on('unhandledRejection', (err) => {
+  // eslint-disable-next-line no-console
+  console.log('UNHANDLED REJECTION! 💥 Shutting down...');
+  // eslint-disable-next-line no-console
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
 });
