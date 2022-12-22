@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/jesterb0206/natours#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^5.13.15",
