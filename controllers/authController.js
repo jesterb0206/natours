@@ -56,3 +56,31 @@ exports.login = catchAsync(async (req, res, next) => {
     token,
   });
 });
+
+exports.protect = catchAsync(async (req, res, next) => {
+  // 1) NEED TO CHECK IF A TOKEN EXISTS AND IF SO GET IT
+
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
+    token = req.headers.authorization.split(' '[1]);
+  }
+  // eslint-disable-next-line no-console
+  console.log(token);
+
+  if (!token) {
+    return next(
+      new AppError('You are not logged in! Please log in to get access!, 401')
+    );
+  }
+
+  // 2) VERIFY TOKEN
+
+  // 3) CHECK IF USER STILL EXISTS
+
+  // 4) CHECK IF THE USER CHANGED THEIR PASSWORD AFTER THE TOKEN WAS ISSUED
+
+  next();
+});
