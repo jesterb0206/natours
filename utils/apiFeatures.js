@@ -10,8 +10,6 @@ class APIFeatures {
     // eslint-disable-next-line prettier/prettier
     excludedFields.forEach((el) => delete queryObj[el]);
 
-    // 1B) ADVANCED FILTERING
-
     let queryStr = JSON.stringify(queryObj);
     // eslint-disable-next-line prettier/prettier
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
