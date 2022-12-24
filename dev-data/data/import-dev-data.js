@@ -3,13 +3,30 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Tour = require('../../models/tourModel');
 
-dotenv.config({ path: `${__dirname}/../../config.env` });
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
+
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  // eslint-disable-next-line no-console
+  .then(() => console.log('DB connection successful!'));
+
+// READ JSON FILE
+
+const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, 'utf-8'));
+
+// IMPORT DATA INTO DB
 
 const importData = async () => {
   try {
-    const tours = JSON.parse(
-      fs.readFileSync(`${__dirname}/tours-simple.json`, 'utf-8')
-    );
     await Tour.create(tours);
     // eslint-disable-next-line no-console
     console.log('Data successfully loaded!');
@@ -17,7 +34,10 @@ const importData = async () => {
     // eslint-disable-next-line no-console
     console.log(err);
   }
+  process.exit();
 };
+
+// DELETE ALL DATA FROM DB
 
 const deleteData = async () => {
   try {
@@ -28,30 +48,11 @@ const deleteData = async () => {
     // eslint-disable-next-line no-console
     console.log(err);
   }
+  process.exit();
 };
 
-(async () => {
-  if (process.argv[2]) {
-    const DB = process.env.DATABASE.replace(
-      '<PASSWORD>',
-      process.env.DATABASE_PASSWORD
-    );
-    await mongoose.connect(DB, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    });
-    // eslint-disable-next-line no-console
-    console.log('DB connection successful!');
-
-    if (process.argv[2] === '--import') {
-      await importData();
-    } else if (process.argv[2] === '--delete') {
-      await deleteData();
-    }
-    await mongoose.disconnect();
-    // eslint-disable-next-line no-console
-    console.log('Mongoose connection closed!');
-  }
-})();
+if (process.argv[2] === '--import') {
+  importData();
+} else if (process.argv[2] === '--delete') {
+  deleteData();
+}
