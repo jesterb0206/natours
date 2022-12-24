@@ -5,7 +5,7 @@ const reviewSchema = new mongoose.Schema(
   {
     review: {
       type: String,
-      required: [true, 'A review cannot be blank!'],
+      required: [true, 'A review can not be blank!'],
     },
     rating: {
       type: Number,
@@ -33,12 +33,13 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+
 reviewSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'user',
     select: 'name photo',
   });
-
   next();
 });
 
@@ -70,8 +71,18 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
 };
 
 reviewSchema.post('save', function () {
-  // Points to current review
+  // Points to the current review
   this.constructor.calcAverageRatings(this.tour);
+});
+
+reviewSchema.pre(/^findOneAnd/, async function (next) {
+  this.r = await this.findOne();
+  next();
+});
+
+reviewSchema.post(/^findOneAnd/, async function () {
+  // await this.findOne(); does NOT work here, query has already executed
+  await this.r.constructor.calcAverageRatings(this.r.tour);
 });
 
 const Review = mongoose.model('Review', reviewSchema);
