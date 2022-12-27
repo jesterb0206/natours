@@ -83,7 +83,11 @@ app.use((req, res, next) => {
 // Routes
 
 app.get('/', (req, res) => {
-  res.status(200).render('base');
+  res.set('Content-Security-Policy', "default-src 'self'");
+  res.status(200).render('base', {
+    tour: 'The Forest Hiker',
+    user: 'Bradley',
+  });
 });
 
 app.use('/api/v1/tours', tourRouter);
