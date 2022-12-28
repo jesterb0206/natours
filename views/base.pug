@@ -5,16 +5,16 @@ html
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         link(rel='stylesheet' href='css/style.css')
         link(rel='shortcut icon' type='image/png' href='img/logo.png')
-        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-        title Natours | Exciting Tours for Adventurous People
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,300&display=swap')
+        title Natours | #{title}
 
     body
         // HEADER
         include _header
 
         // CONTENT
-        section.overview
-            h1= tour
+        block content
+            h1 This is a placeholder heading!
 
         // FOOTER
         include _footer

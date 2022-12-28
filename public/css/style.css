@@ -123,6 +123,7 @@ body {
   );
   background-image: linear-gradient(to right, #7dd56f, #28b487);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   letter-spacing: 0.1rem;
   line-height: 1.3;
@@ -316,6 +317,7 @@ body {
 }
 @media only screen and (max-width: 62.5em) {
   .header {
+    height: 16rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
