@@ -81,7 +81,7 @@ app.use(cookieParser());
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   // eslint-disable-next-line no-console
-  console.log(req.cookies);
+  // console.log(req.cookies);
   next();
 });
 
