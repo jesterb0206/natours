@@ -13,7 +13,7 @@ block content
       nav.user-view__menu
         ul.side-nav
           +navItem('#', 'Settings', 'settings', true)
-          +navItem('#', 'My Bookings', 'briefcase')
+          +navItem('/my-tours', 'My Bookings', 'briefcase')
           +navItem('#', 'My Reviews', 'star')
           +navItem('#', 'Billing', 'credit-card')
 
@@ -31,9 +31,10 @@ block content
           h2.heading-secondary.ma-bt-md Account Settings
 
           //- WITHOUT API
-          //- form.form.form-user-data(action='/submit-user-data' method='POST')
+          //- form.form.form-user-data(action='/submit-user-data' method='POST' enctype='multipart/form-data')
           
           //- WITH API
+
           form.form.form-user-data
             .form__group
               label.form__label(for='name') Name
@@ -43,7 +44,9 @@ block content
               input#email.form__input(type='email', value=`${user.email}`, required, name='email')
             .form__group.form__photo-upload
               img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
-              a.btn-text(href='') Choose New Photo
+              input.form__upload(type='file', accept='image/*', id='photo', name='photo')
+              label(for='photo') Choose New Photo
+              
             .form__group.right
               button.btn.btn--small.btn--green Save Settings
               
