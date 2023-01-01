@@ -46,6 +46,7 @@
     "pug": "^3.0.2",
     "sharp": "^0.31.3",
     "slugify": "^1.6.5",
+    "stripe": "^7.0.0",
     "validator": "^13.7.0"
   },
   "devDependencies": {
