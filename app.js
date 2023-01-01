@@ -7,6 +7,7 @@ const morgan = require('morgan');
 // const xss = require('xss-clean');
 // const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -77,12 +78,12 @@ app.use(cookieParser());
 //   })
 // );
 
+app.use(compression());
+
 // Testing middleware
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  // eslint-disable-next-line no-console
-  // console.log(req.cookies);
   next();
 });
 

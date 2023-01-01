@@ -7,8 +7,6 @@ const handleCastErrorDB = (err) => {
 
 const handleDuplicateFieldsDB = (err) => {
   const value = err.keyValue.name;
-  // eslint-disable-next-line no-console
-  console.log(value);
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
@@ -83,7 +81,7 @@ const sendErrorProd = (err, req, res) => {
 
   if (err.isOperational) {
     // eslint-disable-next-line no-console
-    console.log(err);
+    console.error('ERROR 💥', err);
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
       msg: err.message,
