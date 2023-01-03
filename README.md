@@ -17,6 +17,35 @@
 
 <br>
 
+## Description
+
+<br>
+
+### What I Learned
+
+1. Accepting credit card payments with Stripe
+2. Advanced data modeling: relationships between data, embedding, referencing, etc.
+3. Advanced error handling workflows
+4. Advanced MongoDB: aggregation pipeline, geospatial queries, operators, etc.
+5. Advanced Mongoose: indexes, modeling geospatial data, populates, virtual populates, etc.
+6. Authorization (user roles)
+7. Complete modern authentication with JWT: user sign up, log in, password reset, secure cookies, etc.
+8. CRUD operations with a MongoDB database locally and in the cloud on Atlas
+9. Deploying a Node.js application to production with Railway
+10. Fundamentals of Express.js: middleware, routing, sending responses, etc.
+11. Fundamentals of Mongoose: CRUD operations, data models, data validation, and middleware
+12. Fundamentals of Node.js, including core modules and NPM
+13. How Node.js works behind the scenes: blocking vs. non-blocking code, event-driven architecture, the event loop, modules, streams, etc.
+14. How to work with data in NoSQL databases
+15. RESTful API design and development with advanced features: aliasing, filtering, pagination and sorting
+16. Security: best practices, encryption, rate limiting, sanitization, etc.
+17. Sending emails with Mailtrap
+18. Server-side website rendering with Pug templates
+19. Uploading files and image processing
+20. Using the MVC (Model-View-Controller) architecture
+
+<br>
+
 ## Views From Development
 
 <br>
