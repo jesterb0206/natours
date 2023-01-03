@@ -164,7 +164,7 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
-## Views From Production
+## Views From Production / Usage
 
 <br>
 
@@ -176,11 +176,23 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+To view the homepage navigate to this link:
+
+<br>
+
+https://natours-production-0a23.up.railway.app
+
+<br>
+
 ### Log In
 
 <br>
 
 ![Log In](public/img/production/log-in.png)
+
+<br>
+
+Right now the sign-up form is still in development. If you wish to log in and get the full user experience you can log in as Sophie Louise Hart with the email address `sophie@example.com` and the password `test1234`. You can also log in as Eduardo Hernandez with the email address `edu@example.com` and the password `test1234` as well!
 
 <br>
 
@@ -210,6 +222,10 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+To view any tour navigate to the homepage and click on the `Details` button of any tour you wish to view. To go back to the homepage click on the `All Tours` navigation bar button in the top left-hand corner of the screen. To book a tour simply click on the `Book Tour Now` button at the bottom of your screen.
+
+<br>
+
 ### Stripe Checkout
 
 <br>
@@ -224,11 +240,23 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+If you wish to purchase a tour follow these steps:
+
+1. Under `Card information` type **4242 4242 4242 4242** for the card number, **12/34** for expiration date, and **567** for the CVC.
+2. Under `Name on card` feel free to enter any name you wish.
+3. Under `Country or region` use **United States** for the country/region and **12345** for the ZIP.
+4. Press the `Pay` button and wait a few seconds for the transaction to process.
+5. You're all set! Congratulations on booking your first tour!
+
 ### My Bookings
 
 <br>
 
 ![My Bookings](public/img/production/my-bookings.png)
+
+<br>
+
+To view your bookings click on your profile picture in the upper right-hand corner of the screen. Then, on the left-hand side of screen, underneath **Settings**, you should see **My Bookings**. If you click on it you'll be redirected to a page with the tour you just booked.
 
 <br>
 
@@ -240,11 +268,19 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+To update your profile picture click on the `Choose New Photo` button in **Account Settings** (to navigate to your **Account Settings** click on your profile picture in the upper right-hand corner of the screen just like you did to view your bookings), select an image file, and press `Upload`. Then, press the `Save Settings` button and refresh the page to see your changes!
+
+<br>
+
 ### Change Password
 
 <br>
 
 ![Change Password](public/img/production/change-password.png)
+
+<br>
+
+To change your password click on your profile picture in the upper right-hand corner of the screen, scroll down to the bottom where it says `Change Password`, and type your **Current Password**, your **New Password** and your new password again to **Confirm Password** (please note a valid password is at least 8 characters in length). Finally, press the `Save Password` button and you're all good to go!
 
 <br>
 
