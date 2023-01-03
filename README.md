@@ -21,7 +21,13 @@
 
 <br>
 
+Natours is the final project for Jonas Schmedtmann's Udemy course, "**Node.js, Express, MongoDB & More: The Complete Bootcamp 2023**." Built with CSS, Express.js, JavaScript, a NoSQL database, and Pug Templates, Natours is a tour booking site that allows users to browse nature tours, "purchase" tours they wish to buy, view tours they've booked, update their login credentials and profile picture, and so much more! In this README I clue you in on my process, including issues I encountered during development, technologies I used to build this RESTful API, ideas I have for future development, and how you can contribute to this project moving forward! I hope you enjoy the final product as much as I do!
+
+<br>
+
 ### What I Learned
+
+<br>
 
 1. Accepting credit card payments with Stripe
 2. Advanced data modeling: relationships between data, embedding, referencing, etc.
