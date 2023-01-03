@@ -435,3 +435,33 @@ This project was made possible thanks to **Jonas Schmedtmann**, the Udemy instru
 <br>
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+<br>
+
+## How to Contribute
+
+<br>
+
+If you want to contribute to the Natours API, please email me at:
+
+<br>
+
+jesterb@seattleu.edu
+
+<br>
+
+Any help is welcome, just message me first and I can add you as a collaborator!
+
+<br>
+
+## My GitHub Profile
+
+<br>
+
+[jesterb0206](https://www.github.com/jesterb0206)
+
+<br>
+
+![jesterb0206 GitHub Wrapped](public/img/github-wrapped.png)
+
+<br>
