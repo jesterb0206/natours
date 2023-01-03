@@ -361,3 +361,19 @@ To change your password click on your profile picture in the upper right-hand co
 <p align="left"> <a href="https://www.npmjs.com/package/validator" target="_blank" rel="noreferrer"> validator </a> A library of string validators and sanitizers. </p>
 
 <br>
+
+## Credits
+
+<br>
+
+This project was made possible thanks to **Jonas Schmedtmann**, the Udemy instructor who developed `Node.js, Express, MongoDB & More: The Complete Bootcamp 2023`. Down below is a link to his GitHub profile and the course on Udemy if you want to browse or take it:
+
+<br>
+
+<a href="https://github.com/jonasschmedtmann" target="_blank" rel="noreferrer"> Jonas Schmedtmann's GitHub profile </a>
+
+<br>
+
+<a href="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/" target="_blank" rel="noreferrer"> Jonas Schmedtmann's Node.js, Express, MongoDB & More Udemy course </a>
+
+<br>
