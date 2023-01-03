@@ -112,6 +112,14 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+## Installation
+
+<br>
+
+Clone the repository to your local machine, open your terminal, and navigate to the root folder in the **Natours** repository. To install the necessary dependencies, run `npm install` in your command-line terminal.
+
+<br>
+
 ## Views From Development
 
 <br>
