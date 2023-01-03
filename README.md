@@ -6,6 +6,42 @@
 
 <br>
 
+## Views From Development
+
+<br>
+
+![MongoDB Compass](public/img/development/compass.png)
+
+<br>
+
+<br>
+
+![Compression](public/img/development/compression.png)
+
+<br>
+
+<br>
+
+![Mailtrap](public/img/development/mailtrap.png)
+
+<br>
+
+![Mapbox](public/img/development/mapbox.png)
+
+<br>
+
+<br>
+
+![Postman](public/img/development/postman.png)
+
+<br>
+
+<br>
+
+![Stripe](public/img/development/stripe.png)
+
+<br>
+
 ## Languages and Tools
 
 <br>
