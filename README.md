@@ -88,6 +88,24 @@ When I began the Udemy course I was given a starter file containing all the CSS 
 
 <br>
 
+### Future Development Ideas
+
+<br>
+
+1. Make it so that users can only review a tour that they've booked.
+2. Implement nested booking routes: `/tours/:id/bookings` and `/users/:id/bookings`.
+3. Add a `participants` and `sold out` field to each date, effectively making each date an instance of a tour. If a user wanted to book a tour, they'd have to make sure it wasn't sold out.
+4. Implement advanced authentication features such as confirming a user's email when they sign up, keeping users logged in with refresh tokens, two-factor-authentication, etc.
+5. Implement a sign-up form similar to the login form.
+6. On the tour detail page, if a user has taken a tour, implement a form that allows them to add a review directly to the website.
+7. Hide the entire booking section on the tour detail page if the current user has already booked the tour (also prevent duplicate bookings on the model).
+8. Implement a feature where users can like tours.
+9. On the user account page, implement the `My Reviews` page, where all reviews are displayed and allow users to edit their reviews.
+10. For administrators, implement all of the `Manage` pages, allowing them to create, read, update and delete bookings, reviews, tours and users.
+11. Addressing the issues I stated above.
+
+<br>
+
 ## Views From Development
 
 <br>
