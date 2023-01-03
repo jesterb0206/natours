@@ -17,6 +17,45 @@
 
 <br>
 
+## Table of Contents
+
+<br>
+
+- [Natours](#natours)
+  - [License](#license)
+  - [Deployment Link](#deployment-link)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+    - [What I Learned](#what-i-learned)
+    - [Issues I Encountered](#issues-i-encountered)
+    - [Future Development Ideas](#future-development-ideas)
+  - [Installation](#installation)
+  - [Views From Development](#views-from-development)
+    - [MongoDB Compass](#mongodb-compass)
+    - [Compression](#compression)
+    - [Mailtrap](#mailtrap)
+    - [Mapbox](#mapbox)
+    - [Postman](#postman)
+    - [Stripe](#stripe)
+  - [Views From Production / Usage](#views-from-production--usage)
+    - [All Tours / Homepage](#all-tours--homepage)
+    - [Log In](#log-in)
+    - [Individual Tour](#individual-tour)
+    - [Stripe Checkout](#stripe-checkout)
+    - [My Bookings](#my-bookings)
+    - [Choose New Photo](#choose-new-photo)
+    - [Change Password](#change-password)
+  - [Languages and Tools](#languages-and-tools)
+  - [Additional Languages and Tools](#additional-languages-and-tools)
+  - [Credits](#credits)
+  - [Badges](#badges)
+  - [How to Contribute](#how-to-contribute)
+  - [My GitHub Profile](#my-github-profile)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+<br>
+
 ## Description
 
 <br>
