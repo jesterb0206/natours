@@ -129,7 +129,7 @@ At the very end of the Udemy course I was going to deploy my web application to 
 
 <br>
 
-When I began the Udemy course I was given a starter file containing all the CSS for the final project (it's over 1,300 lines). You could technically say the CSS is responsive as it adjusts the sizing of elements and their layout depending on the width of the viewport. However, a lot of css uses units of measurement such as vh and vw, which causes the elements to look extremely narrow on smaller viewports and extremely wide on larger viewports. This is an issue that I don't think would be extremely difficult to solve but would take awhile as I would have to change dozens and dozens of units of measurement.
+When I began the Udemy course I was given a starter file containing all the CSS for the final project (it's over 1,300 lines). You could technically say the CSS is responsive as it adjusts the sizing of elements and their layout depending on the width of the viewport. However, a lot of the css uses units of measurement such as vh and vw, which causes the elements to look extremely narrow on smaller viewports and extremely wide on larger viewports. This is an issue that I don't think would be extremely difficult to solve but would take awhile as I would have to change dozens and dozens of units of measurement.
 
 <br>
 
