@@ -485,6 +485,10 @@ If you want to contribute to the Natours API, please email me at:
 
 <br>
 
+![Microsoft Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)
+
+<br>
+
 jesterb@seattleu.edu
 
 <br>
