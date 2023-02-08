@@ -1,6 +1,1 @@
-# Linguist overrides
-_.md linguist-vendored=false
-_.md linguist-generated=false
-_.md linguist-documentation=false
-_.md linguist-detectable=true
-git check-attr -a README.md
+*.md linguist-detectable -linguist-documentation
