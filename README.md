@@ -27,7 +27,6 @@
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
     - [What I Learned](#what-i-learned)
-    - [Issues I Encountered](#issues-i-encountered)
     - [Future Development Ideas](#future-development-ideas)
   - [Installation](#installation)
   - [Views From Development](#views-from-development)
@@ -88,48 +87,6 @@ Natours is the final project for Jonas Schmedtmann's Udemy course, "**Node.js, E
 18. Server-side website rendering with Pug templates
 19. Uploading files and image processing
 20. Using the MVC (Model-View-Controller) architecture
-
-<br>
-
-### Issues I Encountered
-
-<br>
-
-![Content Security Policy Issues](public/img/issues/content-security-policy.png)
-
-<br>
-
-Originally I was using an NPM package called helmet to set HTTP security headers but I ended up uninstalling it (along with hpp, mongoSanitize, rateLimit and xss) because I kept getting Content-Security-Policy errors that I didn't know how to remedy (in hindsight I believe the errors may have only been coming from helmet and xss). Eventually I would like to go back and re-implement those security measures once I better know how to define valid sources.
-
-<br>
-
-![SendGrid Issue](public/img/issues/send-grid.png)
-
-<br>
-
-In development I was using Mailtrap to test sending password reset/new user emails with Pug email templates. However, in production I wanted to use Twilio's SendGrid to send automated emails to users. I wrote code to implement that SendGrid feature but decided not to proceed forward as I didn't feel comfortable listing my mailing address in every promotional email I sent to comply with anti-spam laws. Now I'm hoping to find a new way to send automated emails to users without exposing my private information.
-
-<br>
-
-![Railway Issue](public/img/issues/railway.png)
-
-<br>
-
-At the very end of the Udemy course I was going to deploy my web application to Heroku and implement Stripe webhooks as that's something I wanted to save for after the deployment process. However, when I deployed my web app to Heroku my app kept crashing and I was having a hard time parsing the logs for what was causing my app to crash. In order to get my app to be successfully deployed online I decided to use a different hosting platform called Railway, though, the instructor was teaching us about how to integrate Stripe webhooks with Heroku, and when I was following along I couldn't get Stripe webhooks to not crash my app. Right now Stripe Checkout works, but the implementation is unsecure because theoretically anybody could make a booking without paying if they knew how to cheat the system. This is a major issue that I'm hoping to learn how to fix here soon!
-
-<br>
-
-![Responsiveness Issue](public/img/issues/responsiveness.png)
-
-<br>
-
-<br>
-
-![CSS Issue](public/img/issues/css.png)
-
-<br>
-
-When I began the Udemy course I was given a starter file containing all the CSS for the final project (it's over 1,300 lines). You could technically say the CSS is responsive as it adjusts the sizing of elements and their layout depending on the width of the viewport. However, a lot of css uses units of measurement such as vh and vw, which causes the elements to look extremely narrow on smaller viewports and extremely wide on larger viewports. This is an issue that I don't think would be extremely difficult to solve but would take awhile as I would have to change dozens and dozens of units of measurement.
 
 <br>
 
@@ -482,6 +439,10 @@ This project was made possible thanks to **Jonas Schmedtmann**, the Udemy instru
 <br>
 
 If you want to contribute to the Natours API, please email me at:
+
+<br>
+
+![Microsoft Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)
 
 <br>
 
