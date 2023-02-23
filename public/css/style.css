@@ -1,4 +1,4 @@
-/* Fonts */
+/* -------------------- Fonts -------------------- */
 
 @font-face {
   font-family: 'JohnMuirSans';
@@ -10,14 +10,18 @@
   src: local('WanderyRegular'), url('.././fonts/Wandery\ Regular.woff');
 }
 
+/* -------------------- End -------------------- */
+
 :root {
-  --gray: #cabfaa;
+  --brown: #361d0a;
   --green: #313d1d;
   --orange: #d0983c;
   --section-rotate: 9vw;
+  --sunshine: #fdd65f;
+  --white: #dddddd;
 }
 
-/* Modify Later */
+/* -------------------- Modify Later -------------------- */
 
 ::-moz-selection {
   background-color: #55c57a;
@@ -29,7 +33,7 @@
   color: #fff;
 }
 
-/* End */
+/* -------------------- End -------------------- */
 
 * {
   box-sizing: border-box;
@@ -47,7 +51,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header Pug */
+/* -------------------- Header Pug -------------------- */
 
 .header {
   align-items: center;
@@ -90,7 +94,7 @@ a:focus {
 .header__logo,
 .header__logo:link,
 .header__logo:visited {
-  font-family: 'JohnMuirSans';
+  font-family: 'JohnMuirSans', sans-serif;
   font-size: 40px;
   padding-left: 16px;
   padding-right: 16px;
@@ -156,14 +160,130 @@ a:focus {
 
 /* -------------------- End -------------------- */
 
+/* -------------------- Main -------------------- */
+
 .main {
-  background-color: #f7f7f7;
-  padding: 8rem 6rem;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
+  background-color: var(--brown);
   flex: 1;
+  padding: 48px;
   position: relative;
 }
+
+/* -------------------- End -------------------- */
+
+/* -------------------- Log In Pug -------------------- */
+
+.login-form {
+  align-items: center;
+  background-color: var(--green);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 48px;
+  text-align: center;
+}
+
+.heading-secondary {
+  color: var(--orange);
+  font-family: 'JohnMuirSans', sans-serif;
+  font-size: 32px;
+}
+
+.ma-bt-lg {
+  margin-bottom: 48px !important;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 48px;
+}
+
+.form__label {
+  color: var(--orange);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.form__input {
+  background-color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Wandery', serif;
+  font-size: 24px;
+  margin-top: 16px;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.ma-bt-md {
+  margin-bottom: 48px !important;
+}
+
+button {
+  --b: 3px;
+  --c: #d0983c;
+  --s: 0.15em;
+
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #313d1d 90deg,
+      var(--c) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  color: var(--c);
+  --_p: var(--s);
+  outline: var(--b) solid #313d1d;
+  outline-offset: 0.2em;
+  padding: calc(0.05em + var(--s)) calc(0.3em + var(--s));
+  transition: 0.3s linear, color 0s, background-color 0s;
+}
+
+button:focus-visible,
+button:hover {
+  --_p: 0px;
+  outline-color: var(--c);
+  outline-offset: 0.05em;
+}
+
+button:active {
+  background: var(--c);
+  color: white;
+}
+
+button {
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: 'JohnMuirSans', sans-serif;
+  font-size: 40px;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 480px) {
+  .main {
+    padding: 12px;
+  }
+
+  button,
+  .heading-secondary {
+    font-size: 24px;
+  }
+
+  .form__input,
+  .form__label {
+    font-size: 16px;
+  }
+}
+
+/* -------------------- End -------------------- */
 
 .flex {
   display: -webkit-box;
@@ -178,14 +298,6 @@ a:focus {
 .container {
   max-width: 120rem;
   margin: 0 auto;
-}
-
-.ma-bt-md {
-  margin-bottom: 3rem !important;
-}
-
-.ma-bt-lg {
-  margin-bottom: 3.5rem !important;
 }
 
 .right {
@@ -221,26 +333,6 @@ a:focus {
 }
 .alert--error {
   background-color: #eb4d4b;
-}
-
-.heading-secondary {
-  font-size: 2.25rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#7dd56f),
-    to(#28b487)
-  );
-  background-image: linear-gradient(to right, #7dd56f, #28b487);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 0.1rem;
-  line-height: 1.3;
-  display: inline-block;
 }
 .heading-secondary--error {
   background-image: -webkit-gradient(
@@ -297,59 +389,12 @@ a:focus {
   z-index: 10;
 }
 
-.btn,
-.btn:link,
-.btn:visited {
-  font-size: 1.6rem;
-  padding: 1.4rem 3rem;
-  border-radius: 10rem;
-  text-transform: uppercase;
-  display: inline-block;
-  text-decoration: none;
-  position: relative;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  font-weight: 400;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /*Add later when we use this for the button in form*/
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px);
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-  -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.btn:focus {
-  outline: none;
-  background-color: #2e864b;
-}
-
 .btn--white {
   background-color: #fff;
   color: #777;
 }
 .btn--white::after {
   background-color: #fff;
-}
-
-.btn--green {
-  background-color: #55c57a;
-  color: #fff;
-}
-.btn--green::after {
-  background-color: #55c57a;
 }
 
 .btn--small {
@@ -1201,58 +1246,6 @@ a:focus {
   font-weight: 700;
   max-width: 50rem;
   margin: 0 auto;
-}
-
-.login-form {
-  margin: 0 auto;
-  max-width: 55rem;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  padding: 5rem 7rem;
-  border-radius: 5px;
-}
-
-.form__input {
-  display: block;
-  font-family: inherit;
-  font-size: 1.5rem;
-  color: inherit;
-  padding: 1.25rem 1.75rem;
-  border: none;
-  width: 100%;
-  background-color: #fff;
-  background-color: #f2f2f2;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* Pseudo element (a visible thing that isn't really in the DOM).
-        Also needs -ms- */
-}
-.form__input:focus {
-  outline: none;
-  border-bottom: 3px solid #55c57a;
-}
-.form__input:focus:invalid {
-  border-bottom: 3px solid #ff7730;
-}
-.form__input::-webkit-input-placeholder {
-  color: #bbb;
-}
-
-.form__group:not(:last-child) {
-  margin-bottom: 2.5rem;
-}
-
-.form__label {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
 }
 
 .form__photo-upload {
