@@ -13,12 +13,12 @@
 /* -------------------- End -------------------- */
 
 :root {
-  --brown: #361d0a;
-  --green: #313d1d;
-  --orange: #d0983c;
+  --brown: #401b0e;
+  --clay: #8c3a1c;
+  --green: #617358;
+  --off-white: #f2e0c9;
+  --yellow: #bf9e3b;
   --section-rotate: 9vw;
-  --sunshine: #fdd65f;
-  --white: #dddddd;
 }
 
 /* -------------------- Modify Later -------------------- */
@@ -55,7 +55,7 @@ body {
 
 .header {
   align-items: center;
-  background-color: var(--orange);
+  background-color: var(--brown);
   display: flex;
   height: 64px;
   justify-content: space-between;
@@ -73,13 +73,13 @@ a {
   align-items: center;
   background: none;
   border: none;
-  color: var(--green);
+  color: var(--off-white);
   cursor: pointer;
   display: inline-flex;
   font-size: 24px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.2s;
+  transition: all 1s;
 }
 
 a:active,
@@ -89,6 +89,12 @@ a:hover {
 
 a:focus {
   outline: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: var(--yellow);
 }
 
 .header__logo,
@@ -163,7 +169,7 @@ a:focus {
 /* -------------------- Main -------------------- */
 
 .main {
-  background-color: var(--brown);
+  background-color: var(--clay);
   flex: 1;
   padding: 48px;
   position: relative;
@@ -175,7 +181,7 @@ a:focus {
 
 .login-form {
   align-items: center;
-  background-color: var(--green);
+  background-color: var(--off-white);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -187,7 +193,7 @@ a:focus {
 }
 
 .heading-secondary {
-  color: var(--orange);
+  color: var(--green);
   font-family: 'JohnMuirSans', sans-serif;
   font-size: 32px;
 }
@@ -201,13 +207,13 @@ a:focus {
 }
 
 .form__label {
-  color: var(--orange);
+  color: var(--green);
   font-size: 24px;
   margin-bottom: 16px;
 }
 
 .form__input {
-  background-color: var(--white);
+  background-color: #ffffff;
   border: none;
   border-radius: 10px;
   font-family: 'Wandery', serif;
@@ -222,25 +228,30 @@ a:focus {
   outline: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
 .ma-bt-md {
   margin-bottom: 48px !important;
 }
 
 button {
   --b: 3px;
-  --c: #d0983c;
+  --c: #8c3a1c;
   --s: 0.15em;
 
   background: conic-gradient(
       from 90deg at var(--b) var(--b),
-      #313d1d 90deg,
+      #f2e0c9 90deg,
       var(--c) 0
     )
     var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
     calc(100% - var(--b) - 2 * var(--_p));
   color: var(--c);
   --_p: var(--s);
-  outline: var(--b) solid #313d1d;
+  outline: var(--b) solid #f2e0c9;
   outline-offset: 0.2em;
   padding: calc(0.05em + var(--s)) calc(0.3em + var(--s));
   transition: 0.3s linear, color 0s, background-color 0s;
@@ -260,7 +271,7 @@ button:active {
 
 button {
   border: none;
-  color: white;
+  color: var(--green);
   cursor: pointer;
   font-family: 'JohnMuirSans', sans-serif;
   font-size: 40px;
@@ -290,7 +301,7 @@ button {
 .footer {
   align-items: center;
   background-color: var(--brown);
-  border-top: 0.5px solid white;
+  border-top: 1px solid var(--off-white);
   display: flex;
   justify-content: space-between;
   padding: 48px;
@@ -308,15 +319,16 @@ button {
 }
 
 .footer__nav a {
-  color: white;
+  color: var(--off-white);
   font-size: 20px;
   text-decoration: none !important;
   transition: all 1s;
 }
 
-.footer__nav a:hover,
-.footer__nav a:active {
-  color: var(--orange);
+.footer__nav a:active,
+.footer__nav a:focus,
+.footer__nav a:hover {
+  color: var(--yellow);
 }
 
 @media only screen and (max-width: 900px) {
