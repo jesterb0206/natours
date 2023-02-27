@@ -13,10 +13,13 @@
 /* -------------------- End -------------------- */
 
 :root {
+  --blue: #004c6e;
+  --blue-hover: #002749;
   --brown: #401b0e;
+  --brown-hover: #1e0203;
   --clay: #8c3a1c;
   --green: #617358;
-  --off-white: #f2e0c9;
+  --off-white: #f5e3cf;
   --yellow: #bf9e3b;
   --section-rotate: 9vw;
 }
@@ -55,7 +58,7 @@ body {
 
 .header {
   align-items: center;
-  background-color: var(--brown);
+  background-color: var(--off-white);
   display: flex;
   height: 64px;
   justify-content: space-between;
@@ -73,18 +76,13 @@ a {
   align-items: center;
   background: none;
   border: none;
-  color: var(--off-white);
+  color: var(--brown);
   cursor: pointer;
   display: inline-flex;
-  font-size: 24px;
+  font-size: 22px;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 1s;
-}
-
-a:active,
-a:hover {
-  transform: scale(0.95);
 }
 
 a:focus {
@@ -94,14 +92,15 @@ a:focus {
 a:active,
 a:focus,
 a:hover {
-  color: var(--yellow);
+  color: var(--brown-hover);
+  transform: scale(1.15);
 }
 
 .header__logo,
 .header__logo:link,
 .header__logo:visited {
   font-family: 'JohnMuirSans', sans-serif;
-  font-size: 40px;
+  font-size: 44px;
   padding-left: 16px;
   padding-right: 16px;
   position: absolute !important;
