@@ -21,6 +21,7 @@
   --brown-hover: #1e0203;
   --off-white: #f5e3cf;
   --section-rotate: 9vw;
+  --sepia: #704214;
 }
 
 /* -------------------- Modify Later -------------------- */
@@ -399,7 +400,7 @@ button:hover {
 }
 
 .card__picture-overlay {
-  background-image: linear-gradient(to right bottom, #004c6e, #002749);
+  background-color: var(--sepia);
   height: 100%;
   opacity: 0.5;
   position: absolute;
