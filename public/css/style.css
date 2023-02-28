@@ -19,21 +19,23 @@
   --brown-light: #572614;
   --brown-lighter: #80321e;
   --brown-hover: #1e0203;
+  --danger: #b71757;
   --off-white: #f5e3cf;
   --section-rotate: 9vw;
   --sepia: #704214;
+  --success: #499b0f;
 }
 
 /* -------------------- Modify Later -------------------- */
 
 ::-moz-selection {
-  background-color: #55c57a;
-  color: #fff;
+  background-color: var(--brown);
+  color: var(--off-white);
 }
 
 ::selection {
-  background-color: #55c57a;
-  color: #fff;
+  background-color: var(--brown);
+  color: var(--off-white);
 }
 
 /* -------------------- End -------------------- */
@@ -299,6 +301,30 @@ button:hover {
   .login-form {
     box-shadow: 10px 10px 20px var(--brown-hover);
   }
+}
+
+.alert {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  color: var(--off-white);
+  font-size: 33px;
+  font-weight: 400;
+  left: 50%;
+  padding: 45px 135px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.alert--success {
+  background-color: var(--success);
+}
+
+.alert--error {
+  background-color: var(--danger);
 }
 
 /* -------------------- End -------------------- */
@@ -569,29 +595,6 @@ h1 {
   background-color: #e0e0e0;
 }
 
-.alert {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 9999;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-align: center;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 1.6rem 15rem;
-  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
-}
-.alert--success {
-  background-color: #20bf6b;
-}
-.alert--error {
-  background-color: #eb4d4b;
-}
 .heading-secondary--error {
   background-image: -webkit-gradient(
     linear,
