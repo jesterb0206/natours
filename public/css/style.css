@@ -52,7 +52,6 @@ body {
   font-family: 'Wandery', serif;
   line-height: 1.5;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /* -------------------- Header Pug -------------------- */
@@ -569,6 +568,52 @@ h1 {
 
 /* -------------------- End -------------------- */
 
+/* -------------------- Error Pug -------------------- */
+
+.error {
+  align-items: center;
+  background-image: linear-gradient(
+    135deg,
+    hsl(208deg 100% 14%) 0%,
+    hsl(200deg 100% 20%) 19%,
+    hsl(170deg 100% 26%) 38%,
+    hsl(41deg 100% 32%) 54%,
+    hsl(343deg 70% 37%) 68%,
+    hsl(16deg 64% 15%) 80%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 432px;
+  padding: 48px;
+  text-align: center;
+}
+
+.error__title {
+  color: var(--off-white);
+  font-size: 44px;
+  font-weight: 900;
+  padding-bottom: 48px;
+}
+
+.error__msg {
+  color: var(--off-white);
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 480px) {
+  .error__title {
+    font-size: 33px;
+  }
+
+  .error__msg {
+    font-size: 30px;
+  }
+}
+
+/* -------------------- End -------------------- */
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -593,18 +638,6 @@ h1 {
   width: 100%;
   height: 1px;
   background-color: #e0e0e0;
-}
-
-.heading-secondary--error {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ff7730),
-    to(#eb4d4b)
-  );
-  background-image: linear-gradient(to right, #ff7730, #eb4d4b);
-  font-size: 3.5rem;
 }
 
 .heading-primary {
@@ -1270,38 +1303,6 @@ h1 {
   text-transform: uppercase;
   color: #f2f2f2;
   border-bottom: 1px solid currentColor;
-}
-
-.error {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  max-width: 80rem;
-  text-align: center;
-}
-.error__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.error__emoji {
-  font-size: 3.75rem;
-  margin-left: 1rem;
-}
-.error__msg {
-  font-size: 2.5rem;
-  font-weight: 700;
-  max-width: 50rem;
-  margin: 0 auto;
 }
 
 .form__photo-upload {
