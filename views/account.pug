@@ -3,8 +3,6 @@ extends base
 mixin navItem(link, text, icon, active)
   li(class=`${active ? 'side-nav--active' : ''}`)
     a(href=`${link}`)
-      svg
-        use(xlink:href=`img/icons.svg#icon-${icon}`)
       | #{text}
 
 block content
@@ -12,7 +10,7 @@ block content
     .user-view
       nav.user-view__menu
         ul.side-nav
-          +navItem('#', 'Settings', 'settings', true)
+          +navItem('#', 'Settings', 'settings')
           +navItem('/my-tours', 'My Bookings', 'briefcase')
           +navItem('#', 'My Reviews', 'star')
           +navItem('#', 'Billing', 'credit-card')
@@ -28,7 +26,7 @@ block content
 
       .user-view__content
         .user-view__form-container
-          h2.heading-secondary.ma-bt-md Account Settings
+          h2 Account Settings
 
           //- WITHOUT API
           //- form.form.form-user-data(action='/submit-user-data' method='POST' enctype='multipart/form-data')
@@ -47,13 +45,13 @@ block content
               input.form__upload(type='file', accept='image/*', id='photo', name='photo')
               label(for='photo') Choose New Photo
               
-            .form__group.right
-              button.btn.btn--small.btn--green Save Settings
+            .form__group.testing2
+              button Save
               
         .line &nbsp;
         
         .user-view__form-container
-          h2.heading-secondary.ma-bt-md Change Password
+          h2 Change Password
           form.form.form-user-password
             .form__group
               label.form__label(for='password-current') Current Password
@@ -64,5 +62,5 @@ block content
             .form__group.ma-bt-lg
               label.form__label(for='password-confirm') Confirm Password
               input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
-            .form__group.right
-              button.btn.btn--small.btn--green.btn--save-password Save Password
+            .form__group
+              button Save
