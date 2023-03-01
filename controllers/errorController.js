@@ -39,7 +39,6 @@ const sendErrorDev = (err, req, res) => {
 
   // B) RENDERED WEBSITE
 
-  // eslint-disable-next-line no-console
   console.error('ERROR 💥', err);
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
@@ -64,7 +63,6 @@ const sendErrorProd = (err, req, res) => {
 
     // 1) Log error
 
-    // eslint-disable-next-line no-console
     console.error('ERROR 💥', err);
 
     // 2) Send generic message
@@ -80,7 +78,6 @@ const sendErrorProd = (err, req, res) => {
   // A) Operational, trusted error: send message to client
 
   if (err.isOperational) {
-    // eslint-disable-next-line no-console
     console.error('ERROR 💥', err);
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
@@ -91,7 +88,6 @@ const sendErrorProd = (err, req, res) => {
 
   // 1) Log error
 
-  // eslint-disable-next-line no-console
   console.error('ERROR 💥', err);
 
   // 2) Send generic message
