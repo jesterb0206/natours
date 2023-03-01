@@ -48,6 +48,7 @@ const tourSchema = new mongoose.Schema(
       validate: {
         validator: function (val) {
           // this only points to current doc on NEW document creation
+
           return val < this.price;
         },
         message:
@@ -80,6 +81,7 @@ const tourSchema = new mongoose.Schema(
     },
     startLocation: {
       // GeoJSON
+
       type: {
         type: String,
         default: 'Point',
@@ -139,6 +141,7 @@ tourSchema.pre('save', function (next) {
 });
 
 // QUERY MIDDLEWARE
+
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
 
@@ -154,11 +157,6 @@ tourSchema.pre(/^find/, function (next) {
 
   next();
 });
-
-// tourSchema.post(/^find/, function (docs, next) {
-//   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
-//   next();
-// });
 
 const Tour = mongoose.model('Tour', tourSchema);
 

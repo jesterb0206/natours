@@ -72,6 +72,7 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
 
 reviewSchema.post('save', function () {
   // Points to the current review
+
   this.constructor.calcAverageRatings(this.tour);
 });
 
@@ -82,6 +83,7 @@ reviewSchema.pre(/^findOneAnd/, async function (next) {
 
 reviewSchema.post(/^findOneAnd/, async function () {
   // await this.findOne(); does NOT work here, query has already executed
+
   await this.r.constructor.calcAverageRatings(this.r.tour);
 });
 
