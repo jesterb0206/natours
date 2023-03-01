@@ -35,33 +35,6 @@ const createSendToken = (user, statusCode, req, res) => {
   });
 };
 
-// const createSendToken = (user, statusCode, res) => {
-//   const token = signToken(user._id);
-
-//   const cookieOptions = {
-//     expires: new Date(
-//       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-//     ),
-//     httpOnly: true,
-//   };
-
-//   if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-
-//   res.cookie('jwt', token, cookieOptions);
-
-//   // Removes the password from the output
-
-//   user.password = undefined;
-
-//   res.status(statusCode).json({
-//     status: 'success',
-//     token,
-//     data: {
-//       user,
-//     },
-//   });
-// };
-
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
     name: req.body.name,
@@ -86,6 +59,7 @@ exports.login = catchAsync(async (req, res, next) => {
       new AppError('Please provide a valid email address and password!', 400)
     );
   }
+
   // 2) Check if the user exists and the password is correct
 
   const user = await User.findOne({ email }).select('+password');
@@ -128,7 +102,6 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   // 2) VERIFY TOKEN
 
-  // eslint-disable-next-line no-unused-vars
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
   // 3) CHECK IF USER STILL EXISTS
@@ -150,6 +123,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       )
     );
   }
+
   // GRANT ACCESS TO PROTECTED ROUTE
 
   req.user = currentUser;
@@ -217,7 +191,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   // 2) Generate the random reset token
 
-  // eslint-disable-next-line no-unused-vars
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 

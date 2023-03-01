@@ -31,9 +31,6 @@ exports.uploadTourImages = upload.fields([
   { name: 'images', maxCount: 3 },
 ]);
 
-// upload.single('image') req.file
-// upload.array('images', 5) req.files
-
 exports.resizeTourImages = catchAsync(async (req, res, next) => {
   if (!req.files.imageCover || !req.files.images) return next();
 
@@ -110,7 +107,7 @@ exports.getTourStats = catchAsync(async (req, res, next) => {
 });
 
 exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
-  const year = req.params.year * 1; // 2021
+  const year = req.params.year * 1;
 
   const plan = await Tour.aggregate([
     {
