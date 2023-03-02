@@ -31,15 +31,8 @@
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Installation](#installation)
-  - [Views From Development](#views-from-development)
-    - [MongoDB Compass](#mongodb-compass)
-    - [Compression](#compression)
-    - [Mailtrap](#mailtrap)
-    - [Mapbox](#mapbox)
-    - [Postman](#postman)
-    - [Stripe](#stripe)
-  - [Views From Production / Usage](#views-from-production--usage)
-    - [All Tours / Homepage](#all-tours--homepage)
+  - [Usage](#usage)
+    - [Homepage](#homepage)
     - [Log In](#log-in)
     - [Individual Tour](#individual-tour)
     - [Stripe Checkout](#stripe-checkout)
@@ -71,67 +64,15 @@ Clone the repository to your local machine, open your terminal, and navigate to 
 
 <br>
 
-## Views From Development
+## Usage
 
 <br>
 
-### MongoDB Compass
+### Homepage
 
 <br>
 
-![MongoDB Compass](public/img/development/compass.png)
-
-<br>
-
-### Compression
-
-<br>
-
-![Compression](public/img/development/compression.png)
-
-<br>
-
-### Mailtrap
-
-<br>
-
-![Mailtrap](public/img/development/mailtrap.png)
-
-<br>
-
-### Mapbox
-
-<br>
-
-![Mapbox](public/img/development/mapbox.png)
-
-<br>
-
-### Postman
-
-<br>
-
-![Postman](public/img/development/postman.png)
-
-<br>
-
-### Stripe
-
-<br>
-
-![Stripe](public/img/development/stripe.png)
-
-<br>
-
-## Views From Production / Usage
-
-<br>
-
-### All Tours / Homepage
-
-<br>
-
-![All Tours/Homepage](public/img/production/all-tours.png)
+![Homepage](public/img/usage/all-tours.png)
 
 <br>
 
@@ -147,7 +88,7 @@ https://natours-production-0a23.up.railway.app
 
 <br>
 
-![Log In](public/img/production/log-in.png)
+![Log In](public/img/usage/log-in.png)
 
 <br>
 
@@ -159,25 +100,25 @@ Right now the sign-up form is still in development. If you wish to log in and ge
 
 <br>
 
-![Tour Picture 1](public/img/production/tour-picture-1.png)
+![Tour Picture 1](public/img/usage/tour-picture-1.png)
 
 <br>
 
 <br>
 
-![Tour Picture 2](public/img/production/tour-picture-2.png)
+![Tour Picture 2](public/img/usage/tour-picture-2.png)
 
 <br>
 
 <br>
 
-![Tour Picture 3](public/img/production/tour-picture-3.png)
+![Tour Picture 3](public/img/usage/tour-picture-3.png)
 
 <br>
 
 <br>
 
-![Tour Picture 4](public/img/production/tour-picture-4.png)
+![Tour Picture 4](public/img/usage/tour-picture-4.png)
 
 <br>
 
@@ -189,13 +130,13 @@ To view any tour navigate to the homepage and click on the `Details` button of a
 
 <br>
 
-![Stripe Checkout 1](public/img/production/stripe-checkout-1.png)
+![Stripe Checkout 1](public/img/usage/stripe-checkout-1.png)
 
 <br>
 
 <br>
 
-![Stripe Checkout 2](public/img/production/stripe-checkout-2.png)
+![Stripe Checkout 2](public/img/usage/stripe-checkout-2.png)
 
 <br>
 
@@ -211,7 +152,7 @@ If you wish to purchase a tour follow these steps:
 
 <br>
 
-![My Bookings](public/img/production/my-bookings.png)
+![My Bookings](public/img/usage/my-bookings.png)
 
 <br>
 
@@ -223,7 +164,7 @@ To view your bookings click on your profile picture in the upper right-hand corn
 
 <br>
 
-![Choose New Photo](public/img/production/choose-new-photo.png)
+![Choose New Photo](public/img/usage/choose-new-photo.png)
 
 <br>
 
@@ -235,7 +176,7 @@ To update your profile picture click on the `Choose New Photo` button in **Accou
 
 <br>
 
-![Change Password](public/img/production/change-password.png)
+![Change Password](public/img/usage/change-password.png)
 
 <br>
 
