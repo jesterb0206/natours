@@ -21,7 +21,6 @@
   --brown-hover: #1e0203;
   --danger: #b71757;
   --off-white: #f5e3cf;
-  --section-rotate: 9vw;
   --sepia: #704214;
   --success: #499b0f;
 }
@@ -408,21 +407,16 @@ button:hover {
 
 /* -------------------- Overview Pug -------------------- */
 
-.card-container {
-  display: grid;
-  grid-gap: 48px;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
-  max-width: 100%;
+.card__container {
+  margin-bottom: 48px;
 }
 
-@media only screen and (max-width: 1080px) {
-  .card-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.card__container:last-child {
+  margin-bottom: 0px;
 }
 
 .card {
+  aspect-ratio: 3/2;
   backface-visibility: hidden;
   background-color: var(--off-white);
   border: 10px solid var(--brown);
@@ -430,7 +424,8 @@ button:hover {
   box-shadow: 10px 10px 50px var(--brown-hover);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  margin: 0 auto;
+  max-width: 750px;
   transition: 1s all;
 }
 
@@ -440,7 +435,6 @@ button:hover {
 
 .card__picture {
   clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
-  height: 352px;
   position: relative;
 }
 
@@ -454,8 +448,8 @@ button:hover {
 
 .card__picture-img {
   height: 100%;
-  object-fit: cover;
   width: 100%;
+  object-fit: contain;
 }
 
 h1 {
@@ -789,6 +783,107 @@ h1 {
 
 /* -------------------- End -------------------- */
 
+/* -------------------- Tour Pug -------------------- */
+
+.heading-box {
+  position: absolute;
+  bottom: 13vw;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.heading-box__group {
+  color: #f7f7f7;
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.heading-box__detail {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+.heading-box__detail svg {
+  margin-right: 0.8rem;
+}
+.heading-box__detail:not(:last-child) {
+  margin-right: 4rem;
+}
+.heading-box__icon {
+  height: 2rem;
+  width: 2rem;
+  fill: currentColor;
+  -webkit-filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
+}
+
+.overview-box {
+  background-color: #f7f7f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.overview-box__group:not(:last-child) {
+  margin-bottom: 7rem;
+}
+
+.overview-box__detail {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.overview-box__detail svg {
+  margin-right: 1.25rem;
+}
+
+.overview-box__detail:not(:last-child) {
+  margin-bottom: 2.25rem;
+}
+
+.overview-box__icon {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: #55c57a;
+}
+
+.overview-box__label {
+  font-weight: 700;
+  margin-right: 2.25rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.overview-box__text {
+  text-transform: capitalize;
+}
+
+/* -------------------- End -------------------- */
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -891,98 +986,6 @@ h1 {
   outline-offset: 3px;
 }
 
-.section-header {
-  position: relative;
-  height: 38vw;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--section-rotate)),
-    0 100%
-  );
-  -webkit-clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--section-rotate)),
-    0 100%
-  );
-}
-
-.header__hero {
-  height: 100%;
-}
-
-.header__hero-img {
-  -o-object-fit: cover;
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  -o-object-position: 50% 25%;
-  object-position: 50% 25%;
-}
-
-.header__hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    from(#7dd56f),
-    to(#28b487)
-  );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
-  opacity: 0.85;
-}
-
-.heading-box {
-  position: absolute;
-  bottom: 13vw;
-  left: 50%;
-  top: 35%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.heading-box__group {
-  color: #f7f7f7;
-  margin-top: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.heading-box__detail {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
-}
-.heading-box__detail svg {
-  margin-right: 0.8rem;
-}
-.heading-box__detail:not(:last-child) {
-  margin-right: 4rem;
-}
-.heading-box__icon {
-  height: 2rem;
-  width: 2rem;
-  fill: currentColor;
-  -webkit-filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
-  filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
-}
-
 .section-description {
   background-color: #fcfcfc;
   margin-top: calc(0px - var(--section-rotate));
@@ -1009,48 +1012,6 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.overview-box {
-  background-color: #f7f7f7;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.overview-box__group:not(:last-child) {
-  margin-bottom: 7rem;
-}
-.overview-box__detail {
-  font-size: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-weight: 400;
-}
-.overview-box__detail svg {
-  margin-right: 1.25rem;
-}
-.overview-box__detail:not(:last-child) {
-  margin-bottom: 2.25rem;
-}
-.overview-box__icon {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: #55c57a;
-}
-.overview-box__label {
-  font-weight: 700;
-  margin-right: 2.25rem;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-}
-.overview-box__text {
-  text-transform: capitalize;
-}
 .overview-box__img {
   border-radius: 50%;
   height: 3.5rem;
