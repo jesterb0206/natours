@@ -25,3 +25,15 @@ block content
             src=`/img/tours/${tour.imageCover}`,
             alt=`${tour.name}`
           )
+
+        h1
+          span= `${tour.name}`
+        .card__details
+          .card__data
+            svg.card__icon
+              use(xlink:href='/img/icons.svg#icon-clock')
+            span= `${tour.duration} days`
+          .card__data
+            svg.card__icon
+              use(xlink:href='/img/icons.svg#icon-map-pin')
+            span= tour.startLocation.description
