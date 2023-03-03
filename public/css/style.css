@@ -21,12 +21,9 @@
   --brown-hover: #1e0203;
   --danger: #b71757;
   --off-white: #f5e3cf;
-  --section-rotate: 9vw;
   --sepia: #704214;
   --success: #499b0f;
 }
-
-/* -------------------- Modify Later -------------------- */
 
 ::-moz-selection {
   background-color: var(--brown);
@@ -37,8 +34,6 @@
   background-color: var(--brown);
   color: var(--off-white);
 }
-
-/* -------------------- End -------------------- */
 
 * {
   box-sizing: border-box;
@@ -431,6 +426,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin: 0 auto;
+  max-width: 750px;
   transition: 1s all;
 }
 
@@ -440,7 +437,6 @@ button:hover {
 
 .card__picture {
   clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
-  height: 352px;
   position: relative;
 }
 
@@ -454,7 +450,7 @@ button:hover {
 
 .card__picture-img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
@@ -785,6 +781,15 @@ h1 {
   .side-nav a:visited {
     font-size: 22px;
   }
+}
+
+/* -------------------- End -------------------- */
+
+/* -------------------- Tour Pug -------------------- */
+
+.card__break {
+  border-top: 1px solid var(--brown-lighter);
+  margin-top: 24px;
 }
 
 /* -------------------- End -------------------- */
