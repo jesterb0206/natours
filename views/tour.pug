@@ -42,3 +42,12 @@ block content
           span= `${tour.maxGroupSize} people`
 
         .card__break
+
+          h1.tour__guides__padding Your tour guides
+
+          each guide in tour.guides
+            .overview-box__detail
+              img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+              span.card__data__two= guide.name
+
+        .card__break

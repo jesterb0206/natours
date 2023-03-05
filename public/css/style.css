@@ -792,6 +792,30 @@ h1 {
   margin-top: 24px;
 }
 
+.tour__guides__padding {
+  margin-bottom: 36px;
+  margin-top: 12px;
+}
+
+.overview-box__detail {
+  align-items: center;
+  display: flex;
+  padding-bottom: 18px;
+}
+
+.overview-box__img {
+  border-radius: 50%;
+  height: 60px;
+}
+
+.card__data__two {
+  align-items: center;
+  color: var(--brown-lighter);
+  display: flex;
+  font-size: 18px;
+  margin-left: 12px;
+}
+
 /* -------------------- End -------------------- */
 
 .flex {
@@ -885,12 +909,6 @@ h1 {
 }
 .description-box .description__text:not(:last-child) {
   margin-bottom: 2rem;
-}
-
-.overview-box__img {
-  border-radius: 50%;
-  height: 3.5rem;
-  margin-right: 1.25rem;
 }
 
 .section-pictures {
