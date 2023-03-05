@@ -816,6 +816,16 @@ h1 {
   margin-left: 12px;
 }
 
+@media only screen and (max-width: 480px) {
+  .card__data__two {
+    font-size: 16px;
+  }
+
+  .overview-box__img {
+    height: 40px;
+  }
+}
+
 /* -------------------- End -------------------- */
 
 .flex {
