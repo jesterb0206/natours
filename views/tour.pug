@@ -52,7 +52,7 @@ block content
 
         .card__break
 
-          h1.h1.tour__guides__padding= `About ${tour.name}`
+          h1.h1.tour__guides__padding= `About`
           - const paragraphs = tour.description.split('\n');
           each p in paragraphs
             p.description__text= p
@@ -61,3 +61,6 @@ block content
             each img, i in tour.images
               .picture-box
                 img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+
+          section.section-map
+            #map(data-locations=`${JSON.stringify(tour.locations)}`)

@@ -880,6 +880,46 @@ h1 {
   padding-bottom: 27%;
 }
 
+.section-map {
+  height: 65rem;
+  margin-top: calc(0px - 86px);
+  position: relative;
+}
+
+@media only screen and (max-width: 860px) {
+  .section-map {
+    margin-top: calc(0px - var(--section-rotate));
+  }
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.marker {
+  background-image: url('../img/pin.png');
+  background-size: cover;
+  width: 32px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 25rem;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  padding: 1.5rem !important;
+  font-size: 1.4rem;
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+}
+
 /* -------------------- End -------------------- */
 
 .flex {
@@ -963,40 +1003,6 @@ h1 {
   outline: none;
   outline: 3px solid #55c57a;
   outline-offset: 3px;
-}
-
-.section-map {
-  position: relative;
-  height: 65rem;
-  margin-top: calc(0px - var(--section-rotate));
-}
-
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.marker {
-  background-image: url('../img/pin.png');
-  background-size: cover;
-  width: 32px;
-  height: 40px;
-  cursor: pointer;
-}
-
-.mapboxgl-popup {
-  max-width: 25rem;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  padding: 1.5rem !important;
-  font-size: 1.4rem;
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .section-reviews {
