@@ -51,3 +51,10 @@ block content
               span.card__data__two= guide.name
 
         .card__break
+
+          h1.h1.tour__guides__padding= `About ${tour.name}`
+          - const paragraphs = tour.description.split('\n');
+          each p in paragraphs
+            p.description__text= p
+
+        .card__break

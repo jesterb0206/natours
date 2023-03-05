@@ -805,7 +805,7 @@ h1 {
 
 .overview-box__img {
   border-radius: 50%;
-  height: 60px;
+  height: 50px;
 }
 
 .card__data__two {
@@ -816,9 +816,19 @@ h1 {
   margin-left: 12px;
 }
 
+.description__text {
+  color: var(--brown);
+  font-size: 22px;
+  padding-bottom: 18px;
+}
+
 @media only screen and (max-width: 480px) {
   .card__data__two {
     font-size: 16px;
+  }
+
+  .description__text {
+    font-size: 20px;
   }
 
   .overview-box__img {
@@ -909,16 +919,6 @@ h1 {
   outline: none;
   outline: 3px solid #55c57a;
   outline-offset: 3px;
-}
-
-.description-box .description {
-  margin-right: 5rem;
-}
-.description-box .description__text {
-  font-size: 1.7rem;
-}
-.description-box .description__text:not(:last-child) {
-  margin-bottom: 2rem;
 }
 
 .section-pictures {
