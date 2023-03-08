@@ -58,3 +58,17 @@ block content
           section.reviews
             each review in tour.reviews
               +reviewCard(review)
+
+          .card__break
+
+            h1.tour__guides__padding What are you waiting for?
+            p.card__text__2= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
+
+            .margin__top
+
+            if user
+              button.btn#book-tour(data-tour-id=`${tour.id}`) Book tour!
+            else
+              a.btn(href='/login') Log in!
+
+            .margin__bottom
