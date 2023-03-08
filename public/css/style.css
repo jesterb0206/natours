@@ -922,7 +922,7 @@ h1 {
     hsl(16deg 64% 15%) 80%
   );
   border-radius: 15px;
-  box-shadow: inset 10px 10px 500px var(--brown-hover);
+  box-shadow: 5px 5px 20px var(--brown-hover);
   margin-bottom: 48px;
   padding: 48px;
 }
