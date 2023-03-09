@@ -1,5 +1,6 @@
 alerts.js
 index.js
 login.js
+signup.js
 stripe.js
 updateSettings.js

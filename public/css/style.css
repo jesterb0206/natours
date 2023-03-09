@@ -24,7 +24,7 @@
   --sepia: #704214;
   --success: #499b0f;
   --section-rotate: 10vw;
-  --second-rotate-two: 86px;
+  --section-rotate-two: 86px;
 }
 
 ::-moz-selection {
@@ -129,6 +129,10 @@ a:hover {
   width: 40px;
 }
 
+.signup {
+  margin-left: 16px;
+}
+
 @media only screen and (max-width: 1080px) {
   .header {
     flex-direction: column;
@@ -148,6 +152,10 @@ a:hover {
 
   .nav__user-img {
     margin-left: -56px;
+  }
+
+  .signup {
+    margin-left: 0px;
   }
 
   .testing {
@@ -341,6 +349,37 @@ button:hover {
 
 .alert--error {
   background-color: var(--danger);
+}
+
+/* -------------------- End -------------------- */
+
+/* -------------------- Sign Up Pug -------------------- */
+
+.signup-form {
+  align-items: center;
+  background-color: var(--off-white);
+  border: 10px solid var(--brown);
+  border-radius: 15px;
+  box-shadow: 10px 10px 50px var(--brown-hover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 48px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1080px) {
+  .signup-form {
+    box-shadow: 10px 10px 37.5px var(--brown-hover);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .signup-form {
+    box-shadow: 10px 10px 20px var(--brown-hover);
+  }
 }
 
 /* -------------------- End -------------------- */
@@ -853,9 +892,9 @@ h1 {
 @media only screen and (min-width: 861px) {
   .section-pictures {
     clip-path: polygon(
-      0 var(--second-rotate-two),
+      0 var(--section-rotate-two),
       100% 0,
-      100% calc(100% - var(--second-rotate-two)),
+      100% calc(100% - var(--section-rotate-two)),
       0 100%
     );
   }
