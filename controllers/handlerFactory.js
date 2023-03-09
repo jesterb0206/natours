@@ -67,8 +67,6 @@ exports.getOne = (Model, popOptions) =>
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    // Allows Nested GET reviews on Tour
-
     let filter = {};
     if (req.params.tourId) filter = { tour: req.params.tourId };
 
@@ -78,8 +76,6 @@ exports.getAll = (Model) =>
       .limitFields()
       .paginate();
     const doc = await features.query;
-
-    // SEND RESPONSE
 
     res.status(200).json({
       status: 'success',
