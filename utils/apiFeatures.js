@@ -6,12 +6,13 @@ class APIFeatures {
 
   filter() {
     const queryObj = { ...this.queryString };
+
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
-    // eslint-disable-next-line prettier/prettier
+
     excludedFields.forEach((el) => delete queryObj[el]);
 
     let queryStr = JSON.stringify(queryObj);
-    // eslint-disable-next-line prettier/prettier
+
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
     this.query = this.query.find(JSON.parse(queryStr));
@@ -43,7 +44,9 @@ class APIFeatures {
 
   paginate() {
     const page = this.queryString.page * 1 || 1;
+
     const limit = this.queryString.limit * 1 || 100;
+
     const skip = (page - 1) * limit;
 
     this.query = this.query.skip(skip).limit(limit);
@@ -51,5 +54,4 @@ class APIFeatures {
     return this;
   }
 }
-
 module.exports = APIFeatures;
