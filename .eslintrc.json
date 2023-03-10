@@ -1,5 +1,10 @@
 {
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
