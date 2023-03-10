@@ -1,17 +1,17 @@
-const AppError = require('./utils/appError');
-const app = express();
-const bookingRouter = require('./routes/bookingRoutes');
-const compression = require('compression');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const express = require('express');
-const globalErrorHandler = require('./controllers/errorController');
-const morgan = require('morgan');
 const path = require('path');
-const reviewRouter = require('./routes/reviewRoutes');
+const express = require('express');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
+const cors = require('cors');
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
+const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
+const app = express();
 
 app.enable('trust proxy');
 
