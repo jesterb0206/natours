@@ -1,10 +1,10 @@
-const Tour = require('../models/tourModel');
-const User = require('../models/userModel');
-const Booking = require('../models/bookingModel');
-const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/appError');
+import AppError from '../utils/appError.js';
+import Booking from '../models/bookingModel.js';
+import catchAsync from '../utils/catchAsync.js';
+import Tour from '../models/tourModel.js';
+import User from '../models/userModel.js';
 
-exports.getOverview = catchAsync(async (req, res, next) => {
+export const getOverview = catchAsync(async (req, res, next) => {
   const tours = await Tour.find();
 
   res.status(200).render('overview', {
@@ -13,7 +13,7 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getTour = catchAsync(async (req, res, next) => {
+export const getTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findOne({ slug: req.params.slug }).populate({
     path: 'reviews',
     fields: 'review rating user',
@@ -35,22 +35,23 @@ exports.getSignUpForm = (req, res) => {
   });
 };
 
-exports.getLoginForm = (req, res) => {
+export const getLoginForm = (req, res) => {
   res.status(200).render('login', {
-    title: 'Log Into Your Account',
+    title: 'Log Into Your Account!',
   });
 };
 
-exports.getAccount = (req, res) => {
+export const getAccount = (req, res) => {
   res.status(200).render('account', {
     title: 'Your Account',
   });
 };
 
-exports.getMyTours = catchAsync(async (req, res, next) => {
+export const getMyTours = catchAsync(async (req, res, next) => {
   const bookings = await Booking.find({ user: req.user.id });
 
   const tourIDs = bookings.map((el) => el.tour);
+
   const tours = await Tour.find({ _id: { $in: tourIDs } });
 
   res.status(200).render('overview', {
@@ -59,7 +60,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateUserData = catchAsync(async (req, res, next) => {
+export const updateUserData = catchAsync(async (req, res, next) => {
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {
