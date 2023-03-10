@@ -1,8 +1,8 @@
-import AppError from './../utils/appError.js';
-import APIFeatures from './../utils/apiFeatures.js';
-import catchAsync from './../utils/catchAsync.js';
+const AppError = require('./../utils/appError');
+const APIFeatures = require('./../utils/apiFeatures');
+const catchAsync = require('./../utils/catchAsync');
 
-export const deleteOne = (Model) =>
+exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
 
@@ -11,12 +11,12 @@ export const deleteOne = (Model) =>
     }
 
     res.status(204).json({
-      status: 'Success',
+      status: 'success',
       data: null,
     });
   });
 
-export const updateOne = (Model) =>
+exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -35,7 +35,7 @@ export const updateOne = (Model) =>
     });
   });
 
-export const createOne = (Model) =>
+exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
 
@@ -47,7 +47,7 @@ export const createOne = (Model) =>
     });
   });
 
-export const getOne = (Model, popOptions) =>
+exports.getOne = (Model, popOptions) =>
   catchAsync(async (req, res, next) => {
     let query = Model.findById(req.params.id);
 
@@ -67,7 +67,7 @@ export const getOne = (Model, popOptions) =>
     });
   });
 
-export const getAll = (Model) =>
+exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
     let filter = {};
 

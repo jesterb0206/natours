@@ -1,16 +1,4 @@
-import AppError from './../utils/appError.js';
-import ErrorStack from './../models/errorModel.js';
-
-const saveError = async (err) => {
-  const newError = await ErrorStack.create({
-    status: err.status,
-    error: err,
-    message: err.message,
-    stack: err.stack,
-  });
-
-  return newError.id;
-};
+const AppError = require('./../utils/appError');
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
@@ -40,7 +28,7 @@ const handleJWTError = () =>
 const handleJWTExpiredError = () =>
   new AppError('Your token has expired. Please log in again!', 401);
 
-const sendErrorDev = async (err, req, res) => {
+const sendErrorDev = (err, req, res) => {
   if (req.originalUrl.startsWith('/api')) {
     return res.status(err.statusCode).json({
       status: err.status,
@@ -52,55 +40,45 @@ const sendErrorDev = async (err, req, res) => {
 
   console.error('ERROR 💥', err);
 
-  const errorId = await saveError(err);
-
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
-    msg: `${err.message} (${errorId})`,
+    msg: err.message,
   });
 };
 
-const sendErrorProd = async (err, req, res) => {
+const sendErrorProd = (err, req, res) => {
   if (req.originalUrl.startsWith('/api')) {
     if (err.isOperational) {
-      const errorId = await saveError(err);
-
       return res.status(err.statusCode).json({
         status: err.status,
-        message: `${err.message} (${errorId})`,
+        message: err.message,
       });
     }
 
     console.error('ERROR 💥', err);
 
-    const errorId = await saveError(err);
-
     return res.status(500).json({
       status: 'error',
-      message: `Something went wrong! (${errorId})`,
+      message: 'Something went very wrong!',
     });
   }
 
   if (err.isOperational) {
-    const errorId = await saveError(err);
-
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
-      msg: `${err.message} (${errorId})`,
+      msg: err.message,
     });
   }
 
   console.error('ERROR 💥', err);
 
-  const errorId = await saveError(err);
-
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
-    msg: `Please try again later! (${errorId})`,
+    msg: 'Please try again later!',
   });
 };
 
-export default function globalErrorHandler(err, req, res, next) {
+module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
 
   err.status = err.status || 'error';
@@ -121,4 +99,4 @@ export default function globalErrorHandler(err, req, res, next) {
 
     sendErrorProd(error, req, res);
   }
-}
+};

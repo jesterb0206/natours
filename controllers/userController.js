@@ -1,11 +1,10 @@
-import AppError from './../utils/appError.js';
-import catchAsync from './../utils/catchAsync.js';
-import multer from 'multer';
-import sharp from 'sharp';
-import User from './../models/userModel.js';
-import * as factory from './handlerFactory.js';
-
+const AppError = require('./../utils/appError');
+const catchAsync = require('./../utils/catchAsync');
+const factory = require('./handlerFactory');
+const multer = require('multer');
 const multerStorage = multer.memoryStorage();
+const sharp = require('sharp');
+const User = require('./../models/userModel');
 
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
@@ -13,7 +12,7 @@ const multerFilter = (req, file, cb) => {
   } else {
     cb(
       new AppError(
-        'This file is not an image! Please upload images only!',
+        'This file is not an image. Please upload images only!',
         400
       ),
       false
@@ -26,9 +25,9 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-export const uploadUserPhoto = upload.single('photo');
+exports.uploadUserPhoto = upload.single('photo');
 
-export const resizeUserPhoto = catchAsync(async (req, res, next) => {
+exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
   req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
@@ -52,13 +51,13 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
-export const getMe = (req, res, next) => {
+exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
 
   next();
 };
 
-export const updateMe = catchAsync(async (req, res, next) => {
+exports.updateMe = catchAsync(async (req, res, next) => {
   if (req.body.password || req.body.passwordConfirm) {
     return next(
       new AppError(
@@ -85,7 +84,7 @@ export const updateMe = catchAsync(async (req, res, next) => {
   });
 });
 
-export const deleteMe = catchAsync(async (req, res, next) => {
+exports.deleteMe = catchAsync(async (req, res, next) => {
   await User.findByIdAndUpdate(req.user.id, { active: false });
 
   res.status(204).json({
@@ -94,14 +93,13 @@ export const deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
-export const createUser = (req, res) => {
+exports.createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
-    message: 'This route is not yet defined! 😒 Please use /signup instead',
+    message: 'This route is not yet defined. Please use /signup instead!',
   });
 };
-
-export const deleteUser = factory.deleteOne(User);
-export const getUser = factory.getOne(User);
-export const getAllUsers = factory.getAll(User);
-export const updateUser = factory.updateOne(User);
+exports.deleteUser = factory.deleteOne(User);
+exports.getUser = factory.getOne(User);
+exports.getAllUsers = factory.getAll(User);
+exports.updateUser = factory.updateOne(User);

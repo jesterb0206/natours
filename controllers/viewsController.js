@@ -1,10 +1,18 @@
-import AppError from '../utils/appError.js';
-import Booking from '../models/bookingModel.js';
-import catchAsync from '../utils/catchAsync.js';
-import Tour from '../models/tourModel.js';
-import User from '../models/userModel.js';
+const AppError = require('../utils/appError');
+const Booking = require('../models/bookingModel');
+const catchAsync = require('../utils/catchAsync');
+const Tour = require('../models/tourModel');
+const User = require('../models/userModel');
 
-export const getOverview = catchAsync(async (req, res, next) => {
+exports.alerts = (req, res, next) => {
+  const { alert } = req.query;
+  if (alert === 'booking')
+    res.locals.alert =
+      'Your booking was successful. Please check your email for a confirmation!';
+  next();
+};
+
+exports.getOverview = catchAsync(async (req, res, next) => {
   const tours = await Tour.find();
 
   res.status(200).render('overview', {
@@ -13,7 +21,7 @@ export const getOverview = catchAsync(async (req, res, next) => {
   });
 });
 
-export const getTour = catchAsync(async (req, res, next) => {
+exports.getTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findOne({ slug: req.params.slug }).populate({
     path: 'reviews',
     fields: 'review rating user',
@@ -29,25 +37,19 @@ export const getTour = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getSignUpForm = (req, res) => {
-  res.status(200).render('signup', {
-    title: 'Sign Up for an Account',
-  });
-};
-
-export const getLoginForm = (req, res) => {
+exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {
-    title: 'Log Into Your Account!',
+    title: 'Log Into Your Account',
   });
 };
 
-export const getAccount = (req, res) => {
+exports.getAccount = (req, res) => {
   res.status(200).render('account', {
     title: 'Your Account',
   });
 };
 
-export const getMyTours = catchAsync(async (req, res, next) => {
+exports.getMyTours = catchAsync(async (req, res, next) => {
   const bookings = await Booking.find({ user: req.user.id });
 
   const tourIDs = bookings.map((el) => el.tour);
@@ -60,7 +62,7 @@ export const getMyTours = catchAsync(async (req, res, next) => {
   });
 });
 
-export const updateUserData = catchAsync(async (req, res, next) => {
+exports.updateUserData = catchAsync(async (req, res, next) => {
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {

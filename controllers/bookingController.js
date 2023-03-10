@@ -1,13 +1,11 @@
-import Booking from '../models/bookingModel.js';
-import catchAsync from '../utils/catchAsync.js';
-import Stripe from 'stripe';
-import Tour from '../models/tourModel.js';
-import User from '../models/userModel.js';
-import * as factory from './handlerFactory.js';
+const Booking = require('../models/bookingModel');
+const catchAsync = require('../utils/catchAsync');
+const factory = require('./handlerFactory');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const Tour = require('../models/tourModel');
+const User = require('../models/userModel');
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-
-export const getCheckoutSession = catchAsync(async (req, res, next) => {
+exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const tour = await Tour.findById(req.params.tourId);
 
   const session = await stripe.checkout.sessions.create({
@@ -51,7 +49,7 @@ const createBookingCheckout = async (session) => {
   await Booking.create({ tour, user, price });
 };
 
-export const webhookCheckout = (req, res, next) => {
+exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers['stripe-signature'];
 
   let event;
@@ -72,8 +70,8 @@ export const webhookCheckout = (req, res, next) => {
   res.status(200).json({ received: true });
 };
 
-export const createBooking = factory.createOne(Booking);
-export const deleteBooking = factory.deleteOne(Booking);
-export const getBooking = factory.getOne(Booking);
-export const getAllBookings = factory.getAll(Booking);
-export const updateBooking = factory.updateOne(Booking);
+exports.createBooking = factory.createOne(Booking);
+exports.deleteBooking = factory.deleteOne(Booking);
+exports.getBooking = factory.getOne(Booking);
+exports.getAllBookings = factory.getAll(Booking);
+exports.updateBooking = factory.updateOne(Booking);
