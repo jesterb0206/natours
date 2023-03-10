@@ -1,7 +1,7 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "Learning Node.js, Express.js and MongoDB",
+  "description": "A RESTful API / web app with authentication, Node.js security, payment processing and more!",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
