@@ -1,6 +1,9 @@
+const dotenv = require('dotenv');
 const htmlToText = require('html-to-text');
 const nodemailer = require('nodemailer');
 const pug = require('pug');
+
+dotenv.config({ path: './config.env' });
 
 module.exports = class Email {
   constructor(user, url) {
