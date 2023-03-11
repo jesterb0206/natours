@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { showAlert } from './alerts.js';
+import { showAlert } from './alerts';
 
 export const signup = async (name, email, password, passwordConfirm) => {
   try {
@@ -16,7 +16,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
 
     if (res.data.status === 'success') {
       showAlert('success', 'Welcome to Natours!');
-      setTimeout(() => {
+      window.setTimeout(() => {
         location.assign('/');
       }, 1500);
     }
