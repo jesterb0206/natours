@@ -5,7 +5,6 @@
 <br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[This application is under the MIT license](https://opensource.org/licenses/MIT)
 
 <br>
 
@@ -13,11 +12,7 @@
 
 <br>
 
-[Deployment](https://natours-production-0a23.up.railway.app)
-
-<br>
-
-☝🏻 Click there!
+[Natours](https://natours-production-0a23.up.railway.app)
 
 <br>
 
@@ -32,17 +27,8 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [Homepage](#homepage)
-    - [Log In](#log-in)
-    - [Individual Tour](#individual-tour)
-    - [Stripe Checkout](#stripe-checkout)
-    - [My Bookings](#my-bookings)
-    - [Choose New Photo](#choose-new-photo)
-    - [Change Password](#change-password)
   - [Badges](#badges)
   - [Questions](#questions)
-    - [GitHub](#github)
-    - [Email](#email)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -52,7 +38,7 @@
 
 <br>
 
-Natours is the final project of Jonas Schmedtmann's Udemy course, "**Node.js, Express, MongoDB & More: The Complete Bootcamp 2023**." Built with CSS, Express.js, JavaScript, a NoSQL database, and Pug Templates, Natours is a tour booking site that allows users to browse nature tours, "purchase" tours they wish to buy, view tours they've booked, update their login credentials/profile picture, and so much more!
+Built with CSS, Express.js, JavaScript, MongoDB, Node.js, and Pug templates, **Natours** is a tour booking site that allows users to browse nature tours, "purchase" tours they wish to buy, view tours they've booked, update their login credentials/profile picture, and so much more!
 
 <br>
 
@@ -60,7 +46,7 @@ Natours is the final project of Jonas Schmedtmann's Udemy course, "**Node.js, Ex
 
 <br>
 
-Clone the repository to your local machine, open your terminal, and navigate to the root folder in the **Natours** repository. To install the necessary dependencies, run `npm install` in your command-line terminal.
+Clone the repository to your local machine, open your terminal, and navigate to the root folder in the **Natours** repository. To install the necessary dependencies, run `npm i` in your command-line terminal.
 
 <br>
 
@@ -68,23 +54,23 @@ Clone the repository to your local machine, open your terminal, and navigate to 
 
 <br>
 
-### Homepage
+![Home Page](public/img/usage/home-page.png)
 
 <br>
 
-![Homepage](public/img/usage/all-tours.png)
+To view the **Natours** home page navigate to this link:
 
 <br>
 
-To view the homepage navigate to this link:
+[Natours](https://natours-production-0a23.up.railway.app)
 
 <br>
 
-https://natours-production-0a23.up.railway.app
+![Sign Up](public/img/usage/sign-up.png)
 
 <br>
 
-### Log In
+To create an account with **Natours** enter your full name, a valid email address, a secure password (that's at least 8 characters), confirm your password, and press the `SIGN UP` button.
 
 <br>
 
@@ -92,11 +78,7 @@ https://natours-production-0a23.up.railway.app
 
 <br>
 
-Right now the sign-up form is still in development. If you wish to log in and get the full user experience you can log in as Sophie Louise Hart with the email address `sophie@example.com` and the password `test1234`. You can also log in as Eduardo Hernandez with the email address `edu@example.com` and the password `test1234` as well!
-
-<br>
-
-### Individual Tour
+To log into **Natours** simply enter your email address, password, and press the `LOGIN` button.
 
 <br>
 
@@ -104,11 +86,7 @@ Right now the sign-up form is still in development. If you wish to log in and ge
 
 <br>
 
-<br>
-
 ![Tour Picture 2](public/img/usage/tour-picture-2.png)
-
-<br>
 
 <br>
 
@@ -116,39 +94,21 @@ Right now the sign-up form is still in development. If you wish to log in and ge
 
 <br>
 
-<br>
-
-![Tour Picture 4](public/img/usage/tour-picture-4.png)
+To view a tour navigate to the home page and click on the `DETAILS` button underneath it. To go back to the home page click on the `All Tours` navigation bar link in the upper left-hand corner of the screen. To book a tour simply click on the `BOOK TOUR` button at the bottom of that tour's page.
 
 <br>
 
-To view any tour navigate to the homepage and click on the `Details` button of any tour you wish to view. To go back to the homepage click on the `All Tours` navigation bar button in the top left-hand corner of the screen. To book a tour simply click on the `Book Tour Now` button at the bottom of your screen.
+![Stripe Checkout](public/img/usage/stripe-checkout.png)
 
 <br>
 
-### Stripe Checkout
+If you wish to "purchase" a tour follow these steps:
 
-<br>
-
-![Stripe Checkout 1](public/img/usage/stripe-checkout-1.png)
-
-<br>
-
-<br>
-
-![Stripe Checkout 2](public/img/usage/stripe-checkout-2.png)
-
-<br>
-
-If you wish to purchase a tour follow these steps:
-
-1. Under `Card information` type **4242 4242 4242 4242** for the card number, **12/34** for expiration date, and **567** for the CVC.
+1. Under `Card information` type **4242 4242 4242 4242** for the card number, **12/34** for the expiration date, and **567** for the CVC.
 2. Under `Name on card` feel free to enter any name you wish.
-3. Under `Country or region` use **United States** for the country/region and **12345** for the ZIP.
+3. Under `Country or region` use **United States** for the country/region and **12345** for the ZIP Code.
 4. Press the `Pay` button and wait a few seconds for the transaction to process.
 5. You're all set! Congratulations on booking your first tour!
-
-### My Bookings
 
 <br>
 
@@ -156,23 +116,15 @@ If you wish to purchase a tour follow these steps:
 
 <br>
 
-To view your bookings click on your profile picture in the upper right-hand corner of the screen. Then, on the left-hand side of screen, underneath **Settings**, you should see **My Bookings**. If you click on it you'll be redirected to a page with the tour you just booked.
+To view your bookings click on your profile picture in the upper right-hand corner of the screen. Then, at the top of the screen, underneath **Settings**, you should see **My Bookings**. If you click on it you'll be redirected to a page with the tour you just booked.
 
 <br>
 
-### Choose New Photo
+![Change Picture](public/img/usage/change-picture.png)
 
 <br>
 
-![Choose New Photo](public/img/usage/choose-new-photo.png)
-
-<br>
-
-To update your profile picture click on the `Choose New Photo` button in **Account Settings** (to navigate to your **Account Settings** click on your profile picture in the upper right-hand corner of the screen just like you did to view your bookings), select an image file, and press `Upload`. Then, press the `Save Settings` button and refresh the page to see your changes!
-
-<br>
-
-### Change Password
+To update your profile picture click on the `Choose New Photo` button in **Account Settings** (to navigate to **Account Settings** click on your profile picture in the upper right-hand corner of the screen just like you did to view your bookings), select an image file, and press `Upload`. Finally, press the `SAVE` button!
 
 <br>
 
@@ -180,7 +132,7 @@ To update your profile picture click on the `Choose New Photo` button in **Accou
 
 <br>
 
-To change your password click on your profile picture in the upper right-hand corner of the screen, scroll down to the bottom where it says `Change Password`, and type your **Current Password**, your **New Password** and your new password again to **Confirm Password** (please note a valid password is at least 8 characters in length). Finally, press the `Save Password` button and you're all good to go!
+To change your password click on your profile picture in the upper right-hand corner of the screen, scroll down to the bottom where it says `Change Password`, type your current password, your new password, and confirm it. Finally, press the `SAVE` button and you're all set!
 
 <br>
 
@@ -236,27 +188,11 @@ To change your password click on your profile picture in the upper right-hand co
 
 <br>
 
-![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=Udemy&logoColor=white)
-
-<br>
-
 ## Questions
 
 <br>
 
 If you have any additional questions, you can reach me at:
-
-<br>
-
-### GitHub
-
-<br>
-
-[jesterb0206](https://www.github.com/jesterb0206)
-
-<br>
-
-### Email
 
 <br>
 
