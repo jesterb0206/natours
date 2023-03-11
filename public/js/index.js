@@ -1,19 +1,16 @@
 import '@babel/polyfill';
-import { signup } from './signup';
-import { login, logout } from './login';
-import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { login, logout } from './login';
+import { showAlert } from './alerts';
+import { signup } from './signup';
+import { updateSettings } from './updateSettings';
 
-// DOM ELEMENTS
-
-const signUpForm = document.querySelector('.form--signup');
-const loginForm = document.querySelector('.form--login');
+const bookBtn = document.getElementById('book-tour');
 const logOutBtn = document.querySelector('.nav__el--logout');
+const loginForm = document.querySelector('.form--login');
+const signUpForm = document.querySelector('.form--signup');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
-const bookBtn = document.getElementById('book-tour');
-
-// DELEGATION
 
 if (signUpForm) {
   signUpForm.addEventListener('submit', (e) => {
@@ -52,7 +49,7 @@ if (userDataForm)
 if (userPasswordForm)
   userPasswordForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.querySelector('.btn--save-password').textContent = 'Updating...';
+    document.querySelector('.btn--save-password').textContent = 'Updating ...';
 
     const passwordCurrent = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;
@@ -74,3 +71,7 @@ if (bookBtn)
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
+
+const alertMessage = document.querySelector('body').dataset.alert;
+
+if (alertMessage) showAlert('success', alertMessage, 20);

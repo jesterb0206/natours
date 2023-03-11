@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 
-// Either a password or data
-
 export const updateSettings = async (data, type) => {
   try {
     const url =
