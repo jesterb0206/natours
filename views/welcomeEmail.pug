@@ -1,56 +1,21 @@
 doctype html
 html
   head
-    block head
-      meta(charset='UTF-8')
-      meta(name='viewport' content='width=device-width, initial-scale=1.0')
-      link(rel='stylesheet' href='/css/email.css')
-      link(rel='shortcut icon' type='image/png' href='/img/logo.png')
-      title Natours | #{title}
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/email.css')
+    link(rel='shortcut icon' type='image/png' href='/img/logo.png')
+    title Natours | #{title}
 
   body
-    table.body(role='presentation', border='0', cellpadding='0', cellspacing='0')
-      tbody
-        tr
-          td
-          td.container
-            .content
-              // START CENTERED WHITE CONTAINER
-              table.main(role='presentation')
-
-                // START MAIN AREA
-                tbody
-                  tr
-                    td.wrapper
-                      table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                        tbody
-                          tr
-                            td
-                              // CONTENT
-                              block content
-                                p Hi #{firstName},
-                                p Welcome to Natours, we're glad to have you! 🎉🙏
-                                p We're all a big family here, so please make sure to upload your user photo so we can get to know you a bit better!
-                                table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                                  tbody
-                                    tr
-                                      td(align='left')
-                                        table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                                          tbody
-                                            tr
-                                              td
-                                                a(href=`${url}`, target='_blank') Upload user photo
-                                p If you need any help with booking your next tour, please don't hesitate to contact me!
-                                p - Jonas Schmedtmann, CEO
-
-              // START FOOTER
-              .footer
-                table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                  tbody
-                    tr
-                      td.content-block
-                        span.apple-link Natours Inc, 123 Nowhere Road, San Francisco CA 99999
-                        br
-                        |  Don't like these emails? 
-                        a(href='#') Unsubscribe
-          //- td  
+    header.header
+      a.header__logo(href='/') Natours
+    .container
+      p.welcome Welcome to the Natours community
+      p.slogan Flights, Camera, Action
+      p.blurb From rugged cliffs to sandy beaches, Natours is your non-stop flight to incredible adventure!
+        .container__images
+        img(src=`../public/img/tours/tour-1-cover.jpg`, alt=`The Park Camper Tour ${i + 1}`)
+      p.footer Natours Inc, 123 Nowhere Road, San Francisco CA 99999
+      p Don't like these emails? 
+      a(href='#') Unsubscribe
