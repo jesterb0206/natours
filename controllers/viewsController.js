@@ -86,3 +86,9 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
     user: updatedUser,
   });
 });
+
+exports.welcomeEmail = (req, res) => {
+  res.status(200).render('welcomeEmail', {
+    title: 'Welcome',
+  });
+};
