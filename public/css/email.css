@@ -41,7 +41,7 @@ body {
   margin-top: 40px;
 }
 
-a {
+header > a {
   align-items: center;
   color: var(--brown);
   cursor: pointer;
@@ -92,6 +92,8 @@ a {
   padding-bottom: 18px;
 }
 
+/*
+
 .container__images {
   display: grid;
   grid-gap: 48px;
@@ -100,8 +102,36 @@ a {
   max-width: 580px;
 }
 
+*/
+
+.footer__container {
+  margin: 0 auto !important;
+  line-height: 1;
+  max-width: 490px;
+  padding: 16px;
+}
+
+.footer {
+  color: var(--brown-lighter);
+  font-size: 14px;
+  margin-bottom: 12px;
+  margin-top: 36px;
+}
+
+.footer > a {
+  color: var(--blue);
+}
+
+.address {
+  margin-top: 18px;
+}
+
+.view__in__browser {
+  margin-top: 18px;
+}
+
 @media only screen and (max-width: 480px) {
-  a {
+  header > a {
     font-size: 18px;
   }
 

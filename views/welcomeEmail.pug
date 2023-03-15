@@ -14,8 +14,16 @@ html
       p.welcome Welcome to the Natours community
       p.slogan Flights, Camera, Action
       p.blurb From rugged cliffs to sandy beaches, Natours is your non-stop flight to incredible adventure!
-        .container__images
-        img(src=`../public/img/tours/tour-1-cover.jpg`, alt=`The Park Camper Tour ${i + 1}`)
-      p.footer Natours Inc, 123 Nowhere Road, San Francisco CA 99999
-      p Don't like these emails? 
-      a(href='#') Unsubscribe
+    .footer__container
+      span.footer
+        a(href='#') Unsubscribe
+        |  from notifications like these. To unsubscribe from all emails or to manage your email preferences, visit our 
+        a(href='#') preference center
+        | .
+        p.address
+        | Natours 
+        br
+        | 123 Nowhere Road &bull; San Francisco, CA 99999
+        br
+        .view__in__browser
+        a(href='/email/welcome') View in Browser
