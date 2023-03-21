@@ -1,29 +1,411 @@
 doctype html
-html
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet' href='/css/email.css')
-    link(rel='shortcut icon' type='image/png' href='/img/logo.png')
-    title Natours | #{title}
-
-  body
-    header.header
-      a.header__logo(href='/') Natours
-    .container
-      p.welcome Welcome to the Natours community
-      p.slogan Flights, Camera, Action
-      p.blurb From rugged cliffs to sandy beaches, Natours is your non-stop flight to incredible adventure!
-    .footer__container
-      span.footer
-        a(href='#') Unsubscribe
-        |  from notifications like these. To unsubscribe from all emails or to manage your email preferences, visit our 
-        a(href='#') preference center
-        | .
-        p.address
-        | Natours 
-        br
-        | 123 Nowhere Road &bull; San Francisco, CA 99999
-        br
-        .view__in__browser
-        a(href='/email/welcome') View in Browser
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon' type='image/png' href='/img/logo.png')
+  title Natours | #{title}
+style.
+  @import url(https://fonts.googleapis.com/css?family=Poppins:normal,italic,bold&display=swap);
+  #outlook a {
+  padding: 0;
+  }
+  body {
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  }
+  table,
+  td {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+  }
+  img {
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  }
+  p {
+  display: block;
+  margin: 13px 0;
+  }
+  @media only screen and (min-width: 480px) {
+  .column__per__100 {
+  width: 100% !important;
+  max-width: 100%;
+  }
+  }
+  @media only screen and (max-width: 480px) {
+  table.full__width__mobile {
+  width: 100% !important;
+  }
+  td.full__width__mobile {
+  width: auto !important;
+  }
+  }
+  .hide__on__desktop {
+  display: none !important;
+  }
+  @media only screen and (max-width: 480px) {
+  .hide__on__mobile {
+  display: none !important;
+  }
+  .hide__on__desktop {
+  display: block !important;
+  }
+  }
+  a.link {
+  color: #004c6e;
+  }
+// Logo
+div(style='background-color: #f5e3cf')
+  div(style='\
+  background: #f5e3cf;\
+  background-color: #f5e3cf;\
+  margin: 0px auto;\
+  max-width: 600px;\
+  ')
+    table(align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background: #f5e3cf; background-color: #f5e3cf; width: 100%')
+      tbody
+        tr
+          td(style='\
+          direction: ltr;\
+          font-size: 0px;\
+          padding: 8px;\
+          padding-bottom: 32px;\
+          padding-left: 8px;\
+          padding-right: 8px;\
+          padding-top: 20px;\
+          text-align: center;\
+          ')
+            .column__per__100.mj-outlook-group-fix(style='\
+            font-size: 0px;\
+            text-align: left;\
+            direction: ltr;\
+            display: inline-block;\
+            vertical-align: top;\
+            width: 100%;\
+            ')
+              table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                tbody
+                  tr
+                    td(style='vertical-align: top; padding: 0')
+                      table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                        tbody
+                          tr
+                            td(align='center' style='\
+                            font-size: 0px;\
+                            padding: 0px;\
+                            padding-top: 30px;\
+                            padding-right: 0px;\
+                            padding-bottom: 0px;\
+                            padding-left: 0px;\
+                            word-break: break-word;\
+                            ')
+                              table(border='0' cellpadding='0' cellspacing='0' role='presentation' style='\
+                              border-collapse: collapse;\
+                              border-spacing: 0px;\
+                              ')
+                                tbody
+                                  tr
+                                    td(style='width: 160px')
+                                      a.link(href='/')
+                                        img(alt='Natours Logo' height='auto' src='' style='\
+                                        border: 0;\
+                                        display: block;\
+                                        outline: none;\
+                                        text-decoration: none;\
+                                        height: auto;\
+                                        width: 100%;\
+                                        font-size: 13px;\
+                                        ' width='160')
+  // Body
+  div(style='\
+  background: #f5e3cf;\
+  background-color: #f5e3cf;\
+  margin: 0px auto;\
+  max-width: 600px;\
+  ')
+    table(align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background: #f5e3cf; background-color: #f5e3cf; width: 100%')
+      tbody
+        tr
+          td(style='\
+          direction: ltr;\
+          font-size: 0px;\
+          padding: 8px;\
+          padding-bottom: 40px;\
+          padding-left: 8px;\
+          padding-right: 8px;\
+          padding-top: 36px;\
+          text-align: center;\
+          ')
+            .column__per__100.mj-outlook-group-fix(style='\
+            font-size: 0px;\
+            text-align: left;\
+            direction: ltr;\
+            display: inline-block;\
+            vertical-align: top;\
+            width: 100%;\
+            ')
+              table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                tbody
+                  tr
+                    td(style='vertical-align: top; padding: 0')
+                      table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                        tbody
+                          tr
+                            td.hide__on__desktop(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 0px;\
+                            padding-right: 30px;\
+                            padding-bottom: 8px;\
+                            padding-left: 30px;\
+                            word-break: break-word;\
+                            display: none;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 16px;\
+                              line-height: 1.3;\
+                              text-align: center;\
+                              color: #004c6e;\
+                              ")
+                                strong Welcome to the Natours community
+                          tr
+                            td.hide__on__mobile(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 0px;\
+                            padding-right: 76px;\
+                            padding-bottom: 8px;\
+                            padding-left: 76px;\
+                            word-break: break-word;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 16px;\
+                              line-height: 1.3;\
+                              text-align: center;\
+                              color: #004c6e;\
+                              ")
+                                strong Welcome to the Natours community
+                          tr
+                            td.hide__on__desktop(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 8px;\
+                            padding-right: 0px;\
+                            padding-bottom: 0px;\
+                            padding-left: 0px;\
+                            word-break: break-word;\
+                            display: none;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 38px;\
+                              line-height: 1.2;\
+                              text-align: center;\
+                              color: #401b0e;\
+                              ")
+                                strong Flights, Camera, Action
+                          tr
+                            td.hide__on__mobile(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 0px;\
+                            padding-right: 30px;\
+                            padding-bottom: 8px;\
+                            padding-left: 30px;\
+                            word-break: break-word;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 47px;\
+                              line-height: 1.2;\
+                              text-align: center;\
+                              color: #401b0e;\
+                              ")
+                                strong Flights, Camera, Action
+                          tr
+                            td.hide__on__mobile(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 4px;\
+                            padding-right: 76px;\
+                            padding-bottom: 16px;\
+                            padding-left: 76px;\
+                            word-break: break-word;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 16px;\
+                              line-height: 1.7;\
+                              text-align: center;\
+                              color: #572614;\
+                              ")
+                                span(style='font-size: 18px')
+                                  | From rugged cliffs to sandy beaches,
+                                  | Natours is your non-stop flight to
+                                  | incredible adventure!
+                          tr
+                            td.hide__on__desktop(align='center' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 8px;\
+                            padding-right: 8px;\
+                            padding-bottom: 8px;\
+                            padding-left: 8px;\
+                            word-break: break-word;\
+                            display: none;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 16px;\
+                              line-height: 1.7;\
+                              text-align: center;\
+                              color: #572614;\
+                              ")
+                                | From rugged cliffs to sandy beaches, Natours
+                                | is your non-stop flight to incredible
+                                | adventure!
+                                br
+                          tr
+                            td(align='center' style='\
+                            font-size: 0px;\
+                            padding: 0px;\
+                            padding-top: 10px;\
+                            padding-right: 0px;\
+                            padding-bottom: 0px;\
+                            padding-left: 0px;\
+                            word-break: break-word;\
+                            ')
+                              table.full__width__mobile(border='0' cellpadding='0' cellspacing='0' role='presentation' style='\
+                              border-collapse: collapse;\
+                              border-spacing: 0px;\
+                              ')
+                                tbody
+                                  tr
+                                    td.full__width__mobile(style='width: 584px')
+                                      a.link(href='/')
+                                        img(alt='Welcome' height='auto' src='' style='\
+                                        border: 0;\
+                                        display: block;\
+                                        outline: none;\
+                                        text-decoration: none;\
+                                        height: auto;\
+                                        width: 100%;\
+                                        font-size: 13px;\
+                                        ' width='584')
+  // Footer
+  div(style='\
+  background: #f5e3cf;\
+  background-color: #f5e3cf;\
+  margin: 0px auto;\
+  max-width: 600px;\
+  ')
+    table(align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background: #f5e3cf; background-color: #f5e3cf; width: 100%')
+      tbody
+        tr
+          td(style='\
+          direction: ltr;\
+          font-size: 0px;\
+          padding: 8px;\
+          padding-bottom: 8px;\
+          padding-left: 8px;\
+          padding-right: 8px;\
+          padding-top: 0px;\
+          text-align: center;\
+          ')
+            .column__per__100.mj-outlook-group-fix(style='\
+            font-size: 0px;\
+            text-align: left;\
+            direction: ltr;\
+            display: inline-block;\
+            vertical-align: top;\
+            width: 100%;\
+            ')
+              table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                tbody
+                  tr
+                    td(style='vertical-align: top; padding: 0')
+                      table(border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%')
+                        tbody
+                          tr
+                            td.hide__on__mobile(align='left' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 80px;\
+                            padding-right: 76px;\
+                            padding-bottom: 10px;\
+                            padding-left: 76px;\
+                            word-break: break-word;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 12px;\
+                              line-height: 1.5;\
+                              text-align: left;\
+                              color: #80321e;\
+                              ")
+                                a.link(href='#') Unsubscribe
+                                |                                     from notifications like these. To
+                                |                                     unsubscribe from all emails or to manage
+                                |                                     your email preferences, visit our 
+                                a.link(href='#') preference center
+                                |                                     .
+                                br
+                                br
+                                |                                     Natours
+                                br
+                                |                                     123 Nowhere Road &bull; San Francisco, CA
+                                |                                     99999
+                                br
+                                br
+                                a.link(href='/email/welcome') View in Browser
+                          tr
+                            td.hide__on__desktop(align='left' style='\
+                            font-size: 0px;\
+                            padding: 10px;\
+                            padding-top: 90px;\
+                            padding-right: 8px;\
+                            padding-bottom: 10px;\
+                            padding-left: 8px;\
+                            word-break: break-word;\
+                            display: none;\
+                            ')
+                              div(style="\
+                              font-family: 'Poppins', 'Helvetica',\
+                              'Arial', sans-serif;\
+                              font-size: 12px;\
+                              line-height: 1.5;\
+                              text-align: left;\
+                              color: #80321e;\
+                              ")
+                                a.link(href='#') Unsubscribe
+                                |                                     from notifications like these. To
+                                |                                     unsubscribe from all emails or to manage
+                                |                                     your email preferences, visit our 
+                                a.link(href='#') preference center
+                                |                                     .
+                                br
+                                br
+                                |                                     Natours
+                                br
+                                |                                     123 Nowhere Road &bull; San Francisco, CA
+                                |                                     99999
+                                br
+                                br
+                                a.link(href='/email/welcome') View in Browser
