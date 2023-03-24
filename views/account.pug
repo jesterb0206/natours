@@ -10,19 +10,7 @@ block content
     .user-view
       nav.user-view__menu
         ul.side-nav
-          +navItem('#', 'Settings', 'settings')
           +navItem('/my-tours', 'My Bookings', 'briefcase')
-          +navItem('#', 'My Reviews', 'star')
-          +navItem('#', 'Billing', 'credit-card')
-
-        - if (user.role === 'admin')
-          .admin-nav
-            h5.admin-nav__heading Admin
-            ul.side-nav
-              +navItem('#', 'Manage Tours', 'map')
-              +navItem('#', 'Manage Users', 'users')
-              +navItem('#', 'Manage Reviews', 'star')
-              +navItem('#', 'Manage Bookings', 'briefcase')
 
       .user-view__content
         .user-view__form-container

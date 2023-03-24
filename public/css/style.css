@@ -671,24 +671,6 @@ h1 {
   transform: translateX(6px);
 }
 
-.admin-nav {
-  margin-top: 48px;
-}
-
-.admin-nav h5 {
-  margin-bottom: 48px;
-}
-
-.admin-nav__heading {
-  border-bottom: 10px solid var(--off-white);
-  color: var(--off-white);
-  font-size: 60px;
-  margin: 12px;
-  padding-bottom: 3px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .user-view__content {
   align-items: center;
   display: flex;
@@ -744,10 +726,6 @@ h1 {
 }
 
 @media only screen and (max-width: 480px) {
-  .admin-nav__heading {
-    font-size: 24px;
-  }
-
   .form__photo-upload {
     font-size: 18px;
   }
