@@ -384,64 +384,6 @@ button:hover {
 
 /* -------------------- End -------------------- */
 
-/* -------------------- Footer Pug -------------------- */
-
-.footer {
-  align-items: center;
-  background-color: var(--brown);
-  display: flex;
-  justify-content: space-between;
-  padding: 48px;
-  text-align: center;
-}
-
-.footer__nav {
-  display: flex;
-  list-style: none;
-  margin: 0 auto !important;
-}
-
-.footer__nav li {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.footer__nav a {
-  color: var(--off-white);
-  font-size: 22px;
-  text-decoration: none !important;
-  transition: all 1s;
-}
-
-@media only screen and (max-width: 1080px) {
-  .footer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .footer__nav {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .footer__nav a {
-    padding-bottom: 18px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .footer__nav a {
-    font-size: 18px;
-  }
-}
-
-/* -------------------- End -------------------- */
-
 /* -------------------- Overview Pug -------------------- */
 
 .card-container {
