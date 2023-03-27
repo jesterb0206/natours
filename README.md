@@ -74,6 +74,18 @@ To create an account with **Natours** enter your full name, a valid email addres
 
 <br>
 
+![Welcome Email](public/img/usage/welcome-email.png)
+
+<br>
+
+![View In Browser](public/img/usage/view-in-browser.png)
+
+<br>
+
+When you register with **Natours** you'll receive a welcome email. You can view it in the browser by simply clicking on the `View In Browser` link at the bottom of the email. 
+
+<br>
+
 ![Log In](public/img/usage/log-in.png)
 
 <br>
